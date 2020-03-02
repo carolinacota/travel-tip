@@ -10,10 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_165917) do
+ActiveRecord::Schema.define(version: 2020_03_02_171846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "listplaces", force: :cascade do |t|
+    t.bigint "list_id"
+    t.bigint "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_listplaces_on_list_id"
+    t.index ["place_id"], name: "index_listplaces_on_place_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_lists_on_city_id"
+    t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string "name"
+    t.integer "average_rating"
+    t.string "address"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.bigint "city_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_places_on_category_id"
+    t.index ["city_id"], name: "index_places_on_city_id"
+  end
+
+  create_table "tips", force: :cascade do |t|
+    t.integer "rating"
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_tips_on_place_id"
+    t.index ["user_id"], name: "index_tips_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +82,12 @@ ActiveRecord::Schema.define(version: 2020_03_02_165917) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "listplaces", "lists"
+  add_foreign_key "listplaces", "places"
+  add_foreign_key "lists", "cities"
+  add_foreign_key "lists", "users"
+  add_foreign_key "places", "categories"
+  add_foreign_key "places", "cities"
+  add_foreign_key "tips", "places"
+  add_foreign_key "tips", "users"
 end
