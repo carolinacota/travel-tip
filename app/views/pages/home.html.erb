@@ -1,9 +1,32 @@
 
-<div class="container">
+<div class="intro container">
+  <h1 class="title">In friends we trust.</h1>
+  <p>Local recommendations from people you trust.</p>
 
-  <div class="intro">
-    <h1 class="title">In friends we trust.</h1>
-    <p>Find me in app/views/pages/home.html.erb</p>
+  <%= form_tag(root_path, method: 'get', class: "form-inline") do %>
+    <div id= "search-data" class="form-search search-data" data-cities="<%= @cities.to_json %>">
+      <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search by city or friends..." %>
+      <%= submit_tag "Discover", class: "btn btn-primary button-home" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="section container">
+  <h3>At home or abroad, search your place.</h3>
+
+  <div class="left-card">
+    <p>Discover local recommendations made by people you trust.</p>
   </div>
 
+  <div class="right-card">
+    <p>Add them to your wishlist and visit them later!</p>
+  </div>
+
+  <div class="left-card">
+    <p>Map integration for easy discovering.</p>
+  </div>
+
+  <div class="right-card">
+    <p>Make your own lists and share them with friends!!</p>
+  </div>
 </div>

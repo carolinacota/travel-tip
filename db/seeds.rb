@@ -8,7 +8,7 @@
 
 puts "Destroying users, cities, categories and places."
 User.destroy_all
-City.destoy_all
+City.destroy_all
 Category.destroy_all
 Place.destroy_all
 
@@ -21,7 +21,8 @@ user4 = User.create(username: "fourthuser", email: 'fourthtemail@gmail.com', bio
 
 puts "Creating cities"
 madrid = City.new(name: 'Madrid')
-city1.save!
+byebug
+madrid.save!
 tokyo = City.create(name: 'Tokyo')
 london = City.create(name: 'London')
 
