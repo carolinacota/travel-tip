@@ -4,8 +4,8 @@
   <p>Local recommendations from people you trust.</p>
 
   <%= form_tag(root_path, method: 'get', class: "form-inline") do %>
-    <div id= "search-data" class="form-search search-data" data-cities="<%= @cities.to_json %>">
-      <%= text_field_tag :q, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search by city or friends..." %>
+    <div id= "search-data" class="form-search search-data" >
+      <%= text_field_tag :query, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search by city or friends..." %>
       <%= submit_tag "Discover", class: "btn btn-primary button-home" %>
     </div>
   <% end %>
