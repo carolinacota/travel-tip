@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying users, cities, categories and places."
-User.destroy_all
-City.destoy_all
-Category.destroy_all
 Place.destroy_all
+List.destroy_all
+City.destroy_all
+Category.destroy_all
+User.destroy_all
 
 
 puts "Creating users"
@@ -21,14 +22,16 @@ user4 = User.create(username: "fourthuser", email: 'fourthtemail@gmail.com', bio
 
 puts "Creating cities"
 madrid = City.new(name: 'Madrid')
-city1.save!
+madrid.save!
 tokyo = City.create(name: 'Tokyo')
 london = City.create(name: 'London')
 
+puts "Creating lists"
+list1 = List.create(user: user1, city: madrid)
 
 puts "Creating Categories"
 food = Category.new(name: 'Food & Drinks')
-category1.save!
+food.save!
 sight = Category.create(name: 'Sights & attractions')
 entertainment = Category.create(name: 'Entertainment')
 
