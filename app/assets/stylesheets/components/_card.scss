@@ -1,0 +1,57 @@
+h1{
+  font-size: 60px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  color: #FF047D;
+}
+
+h3{
+  font-size: 18px;
+}
+
+.city-name{
+  margin: 20px;
+  text-align: center;
+}
+
+.tip-card {
+  height: 19vh;
+  width: 90vw;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  img {
+    object-fit: cover;
+    width: 30%
+  }
+
+  h2{
+    font-size: 23px;
+    font-family: 'Roboto';
+    font-weight: bold;
+    margin-bottom: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+}
+
+
+.text {
+  margin: 5px;
+  width: 70%;
+  overflow: hidden;
+}
+
+.fa-star {
+  font-size: 12px;
+}
