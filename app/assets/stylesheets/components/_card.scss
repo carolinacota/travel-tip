@@ -1,22 +1,20 @@
-h1{
-  font-size: 60px;
-  font-family: 'Roboto';
-  font-weight: bold;
-  color: #FF047D;
-}
-
-h3{
-  font-size: 18px;
-}
 
 .city-name{
   margin: 20px;
   text-align: center;
+
+  h1{
+    color:$pink;
+    text-transform: uppercase;
+  }
+
+  h3{
+    color: $light-grey;
+  }
 }
 
 .tip-card {
   height: 19vh;
-  width: 90vw;
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -26,10 +24,7 @@ h3{
     width: 30%
   }
 
-  h2{
-    font-size: 23px;
-    font-family: 'Roboto';
-    font-weight: bold;
+  h3{
     margin-bottom: 0px;
     white-space: nowrap;
     overflow: hidden;
@@ -54,4 +49,41 @@ h3{
 
 .fa-star {
   font-size: 12px;
+  color: $grey;
+  margin-top: 0px;
+  padding-top: 0px;
 }
+
+.fa-plus{
+  margin: 5px;
+  color: $pink;
+}
+
+
+.card-tips{
+ margin-top: 3px;
+
+ p{
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+  color: #b9bdbf;
+ }
+
+ h3{
+  margin: 0px;
+  padding: 0px;
+  font-size: 18px;
+  color: #8e9091;
+ }
+}
+
+.place-name {
+  h3{
+    font-size: 30px;
+    font-weight: 700;
+  }
+}
+
+
+
