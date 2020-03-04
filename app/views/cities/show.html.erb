@@ -1,25 +1,35 @@
-<div class='city-banner'>
-  <img src="https://source.unsplash.com/random/?<%=@city.name%>" alt="">
+<div class='city-banner' style="background-image: url(<%="https://images.unsplash.com/photo-1486299267070-83823f5448dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"%>)">
 </div>
 <div class="container">
   <div class="city-name">
-    <h1><%= @city.name.capitalize %></h1>
-    <h3>Discover <%= @city.name.capitalize %> TOP tips</h3>
+    <h1><%= @city.name %></h1>
+    <h3>Discover <%= @city.name.capitalize %>'s TOP tips</h3>
   </div>
       <% @city.places.each do |place| %>
-      <div class="tip-card m-2">
-        <img src="https://source.unsplash.com/random/?food" alt="" class="image">
-        <div class="text ml-3">
-          <h2><%= place.name %></h2>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <p>Tipper's say:</p>
-          <p>"Great place!"</p>
+        <div class="tip-card m-2">
+          <img src="https://source.unsplash.com/random/?food" alt="" class="image">
+          <div class="text ml-3">
+            <div class="d-flex">
+              <div class="place-name flex-grow-1">
+                <h3><%= place.name %></h3>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+            <div class="card-tips">
+              <p>Tipper's say:</p>
+              <h3>"Great place!"</h3>
+            </div>
+          </div>
         </div>
-      </div>
       <% end %>
-    </div>
 </div>
+
+
+
