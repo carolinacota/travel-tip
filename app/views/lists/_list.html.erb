@@ -1,0 +1,46 @@
+
+<% lists.each do |list| %>
+  <%= link_to city_list_path(list.city, list) do %>
+  <div class="d-flex city-card">
+    <img src="https://source.unsplash.com/random/?<%=list.city.name%>" alt="" class="align middle">
+    <div class="align middle p-2">
+    <h3 class="mt-2 ml-2"><%= list.city.name.capitalize %></h3>
+    <div class="flex row ml-2 mt-2">
+      <% count = list.places.count {|place| place.category.name == "Food & Drinks"} %>
+        <div class="d-flex mr-2">
+          <i class="fas fa-utensils align middle p-2">  </i>
+          <p class="align-middle"><small> <%= count %>
+            <% if count > 1%>
+              <%= "tip".pluralize %>
+              <% else %>
+              <%= "tip"%>
+              <% end %>
+          </small></p>
+        </div>
+      <% count = list.places.count {|place| place.category.name == "Sights & attractions"} %>
+        <div class="d-flex mr-2">
+          <i class="fas fa-eye align middle p-2">  </i>
+          <p class="align-middle"><small><%= count%>
+            <% if count > 1%>
+              <%= "tip".pluralize %>
+              <% else %>
+              <%= "tip"%>
+              <% end %>
+            </small></p>
+        </div>
+      <% count = list.places.count {|place| place.category.name == "Entertainment"} %>
+        <div class="d-flex mr-2">
+          <i class="fas fa-child align middle p-2">  </i>
+          <p class="align-middle"><small><%= count %>
+            <% if (count > 1 || count == 0) %>
+              <%= "tip".pluralize %>
+              <% else %>
+              <%= "tip"%>
+              <% end %>
+          </small></p>
+        </div>
+    </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>

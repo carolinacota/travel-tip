@@ -33,7 +33,7 @@ london = City.create(name: 'london')
 
 
 puts "Creating lists"
-list1 = List.create(user: user1, city: madrid)
+list1 = List.create(user: user1, city: madrid, is_wishlist: false)
 
 puts "Creating Categories"
 food = Category.create(name: 'Food & Drinks')
