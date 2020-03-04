@@ -15,21 +15,21 @@ City.destroy_all
 Category.destroy_all
 User.destroy_all
 
-file1 = URI.open("https://i.imgur.com/Sg7w8f5.jpg")
+file1 = URI.open("https://i.imgur.com/uxzGHFY.jpg")
 
 puts "Creating users"
 user1 = User.create(username: "firstuser", email: 'firstemail@gmail.com', bio: "I am the first amazing user", password: '123456')
-# user1.photo.attach(io: file1, filename: "img1", content_type: "image/jpg")
-# user1.save!
+user1.photo.attach(io: file1, filename: "img1.jpg", content_type: "image/jpg")
+user1.save!
 user2 = User.create(username: "seconduser", email: 'secondemail@gmail.com', bio: "I am the second amazing user", password: '123456')
 user3 = User.create(username: "thirduser", email: 'thirdemail@gmail.com', bio: "I am the third amazing user", password: '123456')
 user4 = User.create(username: "fourthuser", email: 'fourthtemail@gmail.com', bio: "I am the fourth amazing user", password: '123456')
 
 puts "Creating cities"
 
-madrid = City.create(name: 'Madrid')
-tokyo = City.create(name: 'Tokyo')
-london = City.create(name: 'London')
+madrid = City.create(name: 'madrid')
+tokyo = City.create(name: 'tokyo')
+london = City.create(name: 'london')
 
 
 puts "Creating lists"
@@ -46,3 +46,7 @@ place1 = Place.create(name: 'Casa Cruz', address: '123A Clarendon Rd, Notting Hi
 place2 = Place.create(name: 'London Eye', address: "The Queen's Walk, Bishop's, London SE1 7PB, United Kingdom", city_id: london.id, category_id: sight.id, average_rating: 3)
 place3 = Place.create(name: 'Natural History Museum', address: "Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom", city_id: london.id, category_id: entertainment.id, average_rating: 4)
 place4 = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terrace, South Kensington, London SW7 3QG, United Kingdom", city_id: london.id, category_id: food.id, average_rating: 4)
+
+puts "Creating places for Madrid"
+place1 = Place.create(name: 'Bola', address: 'Calle de la Bola, Madrid, Spain', city_id: madrid.id, category_id: food.id, average_rating: 4)
+place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid, Spain", city_id: madrid.id, category_id: sight.id, average_rating: 5)
