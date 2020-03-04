@@ -12,4 +12,7 @@ class User < ApplicationRecord
 
   has_many :lists
 
+  def to_param
+    username
+  end
 end

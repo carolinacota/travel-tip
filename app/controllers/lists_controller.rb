@@ -1,8 +1,13 @@
 class ListsController < ApplicationController
   before_action :set_list_and_user, only: :show
-  before_action :set_city, only: :show
+  before_action :set_city, only: [ :show, :create ]
 
   def show
+    authorize @list
+  end
+
+  def create
+    @list = List.create(city: @city, user: current_user)
     authorize @list
   end
 
