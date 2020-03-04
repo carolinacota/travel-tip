@@ -3,10 +3,12 @@ before_action :set_city, only: [:show]
 skip_before_action :authenticate_user!, only: [:show]
 
   def show
-
+    @list = List.where(user: current_user, city: @city).first
+    @list = List.new if @list.nil?
     authorize @city
 
     @markers = @city.places.map do |place|
+
       {
         lat: place.latitude,
         lng: place.longitude,
