@@ -6,8 +6,10 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :username, presence: true
   # validates :bio, presence: true
+
+  validates :username, presence: true, uniqueness: true
+
   has_many :lists
 
 end
