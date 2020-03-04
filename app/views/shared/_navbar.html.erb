@@ -6,7 +6,7 @@
     <!-- <a href="">TravelTip</a> -->
     <%#= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
   <%# end %>
-      <%# unless params[:controller] == 'pages' && params[:action] == 'home' %>
+      <% unless params[:controller] == 'pages' && params[:action] == 'home' %>
         <div class="search">
           <%= text_field_tag :query,
             params[:query],
@@ -14,7 +14,7 @@
             placeholder: "Something else?"
           %>
         </div>
-      <%# end %>
+      <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
