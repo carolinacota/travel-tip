@@ -21,9 +21,9 @@ user3 = User.create(username: "thirduser", email: 'thirdemail@gmail.com', bio: "
 user4 = User.create(username: "fourthuser", email: 'fourthtemail@gmail.com', bio: "I am the fourth amazing user", password: '123456')
 
 puts "Creating cities"
-madrid = City.create(name: 'Madrid')
-tokyo = City.create(name: 'Tokyo')
-london = City.create(name: 'London')
+madrid = City.create(name: 'madrid')
+tokyo = City.create(name: 'tokyo')
+london = City.create(name: 'london')
 
 
 puts "Creating lists"

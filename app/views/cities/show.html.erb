@@ -1,5 +1,6 @@
 <div class='city-banner'>
   <img src="https://source.unsplash.com/random/?<%=@city.name%>" alt="">
+  <img src="https://image.freepik.com/free-vector/street-map-with-pin-routes_23-2147622544.jpg" alt="" class="modal-img" data-toggle="modal" data-target="#myModal">
 </div>
 <div class="container">
   <div class="city-name">
@@ -22,4 +23,34 @@
       </div>
       <% end %>
     </div>
+</div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-xl">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+     <div
+          id="map"
+          style="
+          height: 75vh;
+          overflow: visible;
+          margin-left: -4%;
+          margin-top: -4%;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          style="border: 1px solid black"
+        ></div>
+
+    </div>
+
+  </div>
 </div>

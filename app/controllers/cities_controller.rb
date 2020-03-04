@@ -3,7 +3,16 @@ before_action :set_city, only: [:show]
 skip_before_action :authenticate_user!, only: [:show]
 
   def show
+
     authorize @city
+
+    @markers = @city.places.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude,
+        infoWindow: render_to_string(partial: "places/info_window", locals: { place: place })
+      }
+    end
   end
 
   private
