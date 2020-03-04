@@ -1,0 +1,5 @@
+<%= simple_form_for [@city, @place, @tip] do |f| %>
+  <%= f.input :content, require: true %>
+  <%= f.input :rating, collection: 0..5, require: true %>
+  <%= f.submit "add a tip", class: "btn btn-primary" %>
+<% end %>

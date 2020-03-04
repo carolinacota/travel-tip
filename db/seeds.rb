@@ -26,6 +26,7 @@ tokyo = City.create(name: 'tokyo')
 london = City.create(name: 'london')
 
 
+
 puts "Creating lists"
 list1 = List.create(user: user1, city: madrid)
 
