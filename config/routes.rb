@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: :show, param: :username
   resources :cities, only: :show, param: :name do
-    resources :places, only: :show, param: :name do
-      resources :tips, only: [:new, :create]
-    end
+    resources :lists, only: :show
+  end
+  resources :places, only: :show, param: :name do
+    resources :tips, only: [:new, :create]
   end
   resources :tips, only: [:show]
 end

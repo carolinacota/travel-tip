@@ -20,6 +20,8 @@ gem 'cloudinary', '~> 1.12.0'
 
 gem 'pundit'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'geocoder'
 
 

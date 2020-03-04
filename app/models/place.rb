@@ -3,6 +3,10 @@ class Place < ApplicationRecord
 
   belongs_to :city
   belongs_to :category
+  has_many :tips
+  has_many :listplaces
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

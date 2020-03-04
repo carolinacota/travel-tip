@@ -22,6 +22,6 @@ skip_before_action :authenticate_user!, only: [:show]
   end
 
    def set_city
-    @city = City.find_by(name: params[:name])
+    @city = City.find_by name: params[:name]
   end
 end
