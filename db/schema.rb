@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_132050) do
     t.bigint "city_id"
     t.bigint "category_id"
     t.string "slug"
-    t.datetime "created_at", null: fals
+    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_places_on_category_id"
     t.index ["city_id"], name: "index_places_on_city_id"
