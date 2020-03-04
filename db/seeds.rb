@@ -9,13 +9,10 @@
 puts "Destroying users, cities, categories and places."
 
 Place.destroy_all
+List.destroy_all
 City.destroy_all
 Category.destroy_all
 User.destroy_all
-
-
-
-
 
 puts "Creating users"
 user1 = User.create(username: "firstuser", email: 'firstemail@gmail.com', bio: "I am the first amazing user", password: '123456')
@@ -29,6 +26,9 @@ tokyo = City.create(name: 'Tokyo')
 london = City.create(name: 'London')
 
 
+puts "Creating lists"
+list1 = List.create(user: user1, city: madrid)
+
 puts "Creating Categories"
 food = Category.create(name: 'Food & Drinks')
 sight = Category.create(name: 'Sights & attractions')
@@ -36,8 +36,7 @@ entertainment = Category.create(name: 'Entertainment')
 
 
 puts "Creating places for London"
-place1 = Place.new(name: 'Casa Cruz', address: '123A Clarendon Rd, Notting Hill, London W11 4JG, United Kingdom', city_id: london.id, category_id: food.id, average_rating: 5)
-place1.save
+place1 = Place.create(name: 'Casa Cruz', address: '123A Clarendon Rd, Notting Hill, London W11 4JG, United Kingdom', city_id: london.id, category_id: food.id, average_rating: 5)
 place2 = Place.create(name: 'London Eye', address: "The Queen's Walk, Bishop's, London SE1 7PB, United Kingdom", city_id: london.id, category_id: sight.id, average_rating: 3)
 place3 = Place.create(name: 'Natural History Museum', address: "Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom", city_id: london.id, category_id: entertainment.id, average_rating: 4)
 place4 = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terrace, South Kensington, London SW7 3QG, United Kingdom", city_id: london.id, category_id: food.id, average_rating: 4)
