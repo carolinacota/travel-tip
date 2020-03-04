@@ -2,15 +2,37 @@
 
 .intro {
   background-color: $grey;
-  height: 60vh;
+  height: 70vh;
+  font-family: 'Roboto';
 
   .title {
-    padding-top: 120px;
+    padding-top: 35vh;
     color: white;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
-    font-size: 50px;
+    font-size: 42px;
     line-height: 78.5%;
+  }
+
+  h4 {
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 20px;
+    line-height: 27px;
+    color: #000000;
+  }
+
+  .search-input {
+    background: #DEDCDC;
+    border-radius: 3px;
+    width: 240px;
+  }
+
+  .search-input::placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    color: #B6B0B0;
   }
 }

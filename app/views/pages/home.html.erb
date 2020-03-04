@@ -1,14 +1,15 @@
 
 <div class="intro container">
-  <h1 class="title">In friends we trust.</h1>
-  <p>Local recommendations from people you trust.</p>
+  <h1 class="title">In friends <br> we trust.</h1>
+  <h4>Local recommendations from people you trust.</h4>
 
   <%= form_tag(root_path, method: 'get', class: "form-inline") do %>
-    <div id= "search-data" class="form-search search-data" >
-      <%= text_field_tag :query, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search by city or friends..." %>
-      <%= submit_tag "Discover", class: "btn btn-primary button-home" %>
+    <div id= "search-data" class="form-search search-data d-flex" >
+      <%= text_field_tag :query, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for friends or cities" %>
+      <%= submit_tag "Discover", class: "btn btn-pink" %>
     </div>
   <% end %>
+  <p><i class="fas fa-map-marker-alt"></i> Use my current location.</p>
 </div>
 
 <div class="section container">
