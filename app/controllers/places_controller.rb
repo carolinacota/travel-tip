@@ -16,4 +16,5 @@ def set_place
   @place = Place.find_by(slug: params[:name])
 end
 
+
 end
