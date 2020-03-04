@@ -26,11 +26,9 @@ user3 = User.create(username: "thirduser", email: 'thirdemail@gmail.com', bio: "
 user4 = User.create(username: "fourthuser", email: 'fourthtemail@gmail.com', bio: "I am the fourth amazing user", password: '123456')
 
 puts "Creating cities"
-
 madrid = City.create(name: 'madrid')
 tokyo = City.create(name: 'tokyo')
 london = City.create(name: 'london')
-
 
 puts "Creating lists"
 list1 = List.create(user: user1, city: madrid, is_wishlist: false)

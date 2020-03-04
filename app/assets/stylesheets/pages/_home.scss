@@ -1,1 +1,87 @@
 // Specific CSS for your home-page
+
+.intro {
+  background-color: $grey;
+  height: 75vh;
+
+  .title {
+    padding-top: 25vh;
+    color: white;
+    line-height: 78.5%;
+  }
+
+  p {
+    font-style: normal;
+    color: #000000;
+  }
+
+  .search-data input {
+    border: none;
+    outline: none;
+  }
+
+  input#query:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .search-input {
+    background: #DEDCDC;
+    border-radius: 3px;
+    width: 240px;
+    outline: none;
+    // box-shadow: none !important;
+  }
+
+  .search-input::placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    height: 40px;
+    color: #B6B0B0;
+  }
+
+  // #location {
+  //   font-style: normal;
+  //   font-weight: 500;
+  //   font-size: 20px;
+  //   line-height: 21px;
+  //   color: #FFFFFF;
+  //   padding-top: 10px;
+  //   // text-align: center;
+  // }
+}
+
+.section {
+
+  h3 {
+    color: $pink;
+    text-align: center;
+    line-height: 27px;
+    margin-top: 40px;
+  }
+
+  .left-card {
+    float: left;
+    width: 70%;
+    height: 161px;
+    background-color: $grey;
+    margin: 40px 0;
+    position: relative;
+  }
+
+  .right-card {
+    float: right;
+    width: 70%;
+    height: 161px;
+    background-color: $grey;
+    // padding-top: 60px;
+    margin: 40px 0;
+    position: relative;
+  }
+
+  p {
+    position: absolute;
+    bottom: 5px;
+  }
+}
