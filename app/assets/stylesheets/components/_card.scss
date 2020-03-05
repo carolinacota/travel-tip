@@ -20,14 +20,18 @@
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
-  img {
-    object-fit: cover;
-    width: 30%
+  a {
+    color: black;
   }
 
-  h3{
+  img {
+    object-fit: cover;
+    max-width: 30vw;
+  }
+
+  h5{
     margin-bottom: 0px;
-    white-space: nowrap;
+    // white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 200px;
@@ -41,22 +45,36 @@
   }
 }
 
+.place-name {
+  height: 30%;
+  margin-top: 10px;
+}
+
+.rating-city-card{
+  height: 20%;
+}
+
+.card-tips{
+  height:20%;
+}
+
+
 .text {
   margin: 5px;
   width: 70%;
   overflow: hidden;
 }
 
+
 .fa-star {
   font-size: 12px;
   color: $grey;
-  margin-top: 0px;
-  padding-top: 0px;
 }
 
 .fa-plus{
   margin: 5px;
   color: $pink;
+  font-size:20px;
 }
 
 
