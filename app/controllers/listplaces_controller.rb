@@ -3,14 +3,13 @@ class ListplacesController < ApplicationController
   before_action :set_place
 
   def create
-    @list = current_user.lists.find{ |list| list.city == @city && list.is_wishlist}
-    @list = List.create(user: current_user, city: @city, is_wishlist: true) if !@list
+    should_be_wishlist = @place.tips.none? { |tip| tip.user == current_user }
+    @list = List.find_or_create_list(current_user, @city, should_be_wishlist)
     @list_place = Listplace.new(place: @place, list: @list)
     authorize @list_place
     if @list_place.save
       flash[:notice] = "Place succesfully added to your wishlist"
     else
-      p @list_place.errors
       flash[:notice] = "This place is already in your list"
     end
     redirect_to city_path(@city)
