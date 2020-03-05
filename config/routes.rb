@@ -7,12 +7,11 @@ Rails.application.routes.draw do
   resources :users, only: :update, param: :username
 
   resources :cities, only: :show, param: :name do
-    resources :places, only: :show, param: :name do
+    resources :places, only: :show, param: :slug do
       resources :tips, only: [:new, :create]
       resources :listplaces, only: :create
     end
     resources :lists, only: [:show, :create]
-    resources :places, only: :show, param: :name
   end
 
   resources :tips, only: [:show]

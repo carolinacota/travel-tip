@@ -35,7 +35,7 @@ const autocompleteSearch = function() {
       minChars: 1,
       source: function(term, suggest){
         $.getJSON('/autocomplete',
-          { query: term, places: true },
+          { query: term },
           function(data) {
             return data;
         }).then((data) => {
