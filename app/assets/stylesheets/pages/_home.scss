@@ -28,7 +28,7 @@
   .search-input {
     background: #DEDCDC;
     border-radius: 3px;
-    width: 240px;
+    width: 80%;
     outline: none;
     // box-shadow: none !important;
   }
@@ -50,6 +50,15 @@
   //   padding-top: 10px;
   //   // text-align: center;
   // }
+
+  .current-location {
+    color: $pink;
+    margin-top: 4px;
+  }
+
+  #current-location {
+    color: $pink;
+  }
 }
 
 .section {
