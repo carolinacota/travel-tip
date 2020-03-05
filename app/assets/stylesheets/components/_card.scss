@@ -63,7 +63,7 @@
 
 /* CITY CARD INSIDE THE PROFILE */
 .city-card {
-  height: 12vh;
+  height: 14vh;
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -115,6 +115,27 @@
     font-weight: 700;
   }
 }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: $pink;
+}
+
+.nav-item > a {
+    color: $pink;
+    text-decoration: none;
+}
+
+.nav-item > a:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+#list-header {
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $pink;
 
 // TIP CARDS //
 
