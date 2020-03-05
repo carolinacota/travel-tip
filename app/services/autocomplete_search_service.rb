@@ -1,8 +1,7 @@
 class AutocompleteSearchService
 
-  def initialize(term, fetch_places = true)
+  def initialize(term)
     @term = term
-    @fetch_places = fetch_places
   end
 
   def call
@@ -24,8 +23,6 @@ class AutocompleteSearchService
   end
 
   def places
-    return [] unless @fetch_places
-
     Place.where("name ILIKE ?", "#{@term}%")
         .take(5)
         .map { |p| { name: p.name, city: p.city.slug, slug: p.slug } }
