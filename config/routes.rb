@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :tips, only: [:show]
 
-  resource :autocomplete, only: :show
+  resource :autocomplete, only: [:show]
 
   get '/:username', to: 'users#show', as: :profile
 end
