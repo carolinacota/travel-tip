@@ -1,18 +1,21 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-  <a href="#" class="logo">TravelTip</a>
-
-  <%#= link_to "#", do %>
-    <!-- <a href="">TravelTip</a> -->
-    <%#= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <%# if current_user %>
+    <%#= link_to 'TravelTip', profile_path(current_user), class: 'logo' %>
+  <%# else %>
+    <%= link_to 'TravelTip', root_path, class: 'logo' %>
   <%# end %>
+
       <% unless params[:controller] == 'pages' && params[:action] == 'home' %>
         <div class="search">
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control search-form", id:"search-bar",
-            placeholder: "Something else?"
-          %>
+          <%= form_tag(root_path, method: 'get') do %>
+            <%= text_field_tag :query,
+              params[:query],
+              autocomplete: :off,
+              class: "form-control search-form", id:"search-bar",
+              placeholder: "Something else?"
+            %>
+          <% end %>
         </div>
       <% end %>
 
@@ -24,13 +27,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if current_user %>
-        <li class="nav-item active">
+        <li class="nav-item">
           <%= link_to "Profile", profile_path(current_user), class: "nav-link" %>
         </li>
-        <li class="nav-item">
           <!-- CHANGE THIS PATH TO FRIENDS PATH -->
-          <%= link_to "Friends", new_user_session_path, class: "nav-link" %>
-        </li>
+<!--         <li class="nav-item">
+          <%#= link_to "Friends", new_user_session_path, class: "nav-link" %>
+        </li> -->
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>

@@ -1,6 +1,6 @@
 class AutocompleteSearchService
 
-  def initialize(term, fetch_places = false)
+  def initialize(term, fetch_places = true)
     @term = term
     @fetch_places = fetch_places
   end
