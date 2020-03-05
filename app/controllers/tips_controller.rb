@@ -1,7 +1,7 @@
 class TipsController < ApplicationController
 
 def new
-  @place = Place.find_by(slug: params[:place_name])
+  @place = Place.find_by(slug: params[:place_slug])
   @city = @place.city
   @tip = Tip.new
   authorize @tip
