@@ -13,7 +13,7 @@
       <div class="col">
         <% if (current_user == @user && !@user.photo.attached? ) %>
           <p>Upload your pic!<i id="avatar-upload" class="fas fa-upload"></i></p>
-        <% else %>
+        <% elsif @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :fill, :class => "avatar-large", id: "avatar-upload" %>
         <% end %>
         <h1><%= @user.username %></h1>
