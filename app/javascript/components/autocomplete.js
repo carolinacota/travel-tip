@@ -5,13 +5,13 @@ const renderItem = function (item) {
     let icon, uri;
     if (item.type === 'user') {
       icon = '<i class="fas fa-user-circle"></i>';
-      uri = item.slug
+      uri = `/${item.slug}`
     } else if (item.type === 'city') {
-      icon = '<i class="fas fa-code"></i>';
-      uri = 'cities/' + item.slug
+      icon = '<i class="fas fa-city"></i>';
+      uri = '/cities/' + item.slug
     } else if (item.type === 'place') {
-      icon = '<i class="fas fa-code"></i>';
-      uri = `cities/${item.city}/places/${item.slug}`
+      icon = '<i class="fas fa-map-marker-alt"></i>';
+      uri = `/cities/${item.city}/places/${item.slug}`
     }
     return `
       <div class="autocomplete-suggestion"
@@ -27,7 +27,7 @@ const onSelect = function(_event, _term, item) {
 }
 
 const autocompleteSearch = function() {
-  const searchInput = document.getElementById('query');
+  const searchInput = document.getElementById('query') || document.getElementById('search-bar');
 
   if (searchInput) {
     new autocomplete({
@@ -35,7 +35,7 @@ const autocompleteSearch = function() {
       minChars: 1,
       source: function(term, suggest){
         $.getJSON('/autocomplete',
-          { query: term, places: false },
+          { query: term, places: true },
           function(data) {
             return data;
         }).then((data) => {
