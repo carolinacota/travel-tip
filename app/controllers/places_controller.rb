@@ -1,6 +1,7 @@
 class PlacesController < ApplicationController
 before_action :set_place, only: [:show]
 skip_before_action :authenticate_user!, only: [:show]
+# has_many :tips
 
 def show
   authorize @place

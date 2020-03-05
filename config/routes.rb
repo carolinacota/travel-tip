@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   # resources :users, only: :show, param: :username
 
   resources :cities, only: :show, param: :name do
+    resources :places, only: :show, param: :name do
+      resources :tips, only: [:new, :create]
+    end
     resources :lists, only: [:show, :create]
     resources :places, only: :show, param: :name
   end
-  resources :places, only: [], param: :name do
-    resources :tips, only: [:new, :create]
-  end
+
   resources :tips, only: [:show]
 
   resource :autocomplete, only: :show
