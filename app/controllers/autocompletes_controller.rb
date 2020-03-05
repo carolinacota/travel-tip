@@ -3,7 +3,7 @@ class AutocompletesController < ApplicationController
 
   def show
     term = params[:query]
-    fetch_places = params[:places] || false
+    fetch_places = params[:places]
     results = AutocompleteSearchService.new(term, fetch_places).call
     render json: results
     skip_authorization

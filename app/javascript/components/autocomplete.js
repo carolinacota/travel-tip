@@ -4,7 +4,7 @@ import autocomplete from 'js-autocomplete';
 const renderItem = function (item) {
     let icon, uri;
     if (item.type === 'user') {
-      icon = '<i class="fab fa-github"></i>';
+      icon = '<i class="fas fa-user-circle"></i>';
       uri = item.slug
     } else if (item.type === 'city') {
       icon = '<i class="fas fa-code"></i>';
