@@ -11,7 +11,6 @@ import { autocompleteSearch } from '../components/autocomplete'
 import { getCurrentPosition } from '../plugins/geolocation'
 import { avatarUpload } from '../plugins/avatar_upload'
 
-console.log("HELLO from APPLICATION JS")
 autocompleteSearch();
 getCurrentPosition();
 avatarUpload()
