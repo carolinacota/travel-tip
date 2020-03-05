@@ -26,7 +26,7 @@ user2 = User.new(username: "seconduser", email: 'secondemail@gmail.com', bio: "I
 user2.photo.attach(io: file2, filename: "img2.jpg", content_type: "image/jpg")
 user2.save!
 user3 = User.create(username: "thirduser", email: 'thirdemail@gmail.com', bio: "I am the third amazing user", password: '123456')
-user4 = User.create(username: "fourthuser", email: 'fourthtemail@gmail.com', bio: "I am the fourth amazing user", password: '123456')
+user4 = User.create(username: "fourthuser", email: 'fourthemail@gmail.com', password: '123456')
 
 puts "Creating cities"
 madrid = City.create(name: 'madrid')
