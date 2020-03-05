@@ -13,7 +13,6 @@ def create
   @tip.place = @place
   @tip.user = current_user
   @tip.save
-  binding.pry
   redirect_to city_place_path(@place.city, @place)
   authorize @tip
 end
