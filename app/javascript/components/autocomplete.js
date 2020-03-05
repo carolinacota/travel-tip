@@ -28,17 +28,22 @@ const onSelect = function(_event, _term, item) {
 
 const autocompleteSearch = function() {
   const searchInput = document.getElementById('query') || document.getElementById('search-bar');
+  console.log("Hello from AUTOCOMPLETE", "Input:", searchInput)
 
   if (searchInput) {
+    console.log("Inside the IF")
     new autocomplete({
       selector: searchInput,
       minChars: 1,
       source: function(term, suggest){
+        console.log("Hello from the SOURCE")
         $.getJSON('/autocomplete',
-          { query: term, places: true },
+          { query: term },
           function(data) {
+            console.log("Hello from the DATA", data)
             return data;
         }).then((data) => {
+          console.log("Hello from the MATCHES", data)
           const matches = []
           data.cities.forEach((city) => {
             matches.push({type: 'city', name: city.name, slug: city.slug });

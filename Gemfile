@@ -17,13 +17,8 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem 'cloudinary', '~> 1.12.0'
-
 gem 'pundit'
-
-gem 'dotenv-rails', groups: [:development, :test]
-
 gem 'geocoder'
-
 
 group :development do
   gem 'web-console', '>= 3.3.0'
