@@ -15,17 +15,4 @@ const avatarUpload = () => {
 }
 
 
-$(function() {
-  $("#avatar-upload")
-    .mouseover(function() {
-       var src = $(this).attr("src").replace(@user.photo.key, "over.jpg");
-       $(this).attr("src", src);
-    })
-    .mouseout(function() {
-        var src = $(this).attr("src").replace("over.jpg", "image.jpg");
-       $(this).attr("src", src);
-
-    });
- });
-
 export { avatarUpload }

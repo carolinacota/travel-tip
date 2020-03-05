@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get :autocomplete, to: 'pages#autocomplete'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users, only: [:show, :update], param: :username
+  resources :users, only: :update
   resources :cities, only: :show, param: :name do
     resources :lists, only: :show
   end
@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :tips, only: [:new, :create]
   end
   resources :tips, only: [:show]
+
+    get '/:username', to: 'users#show', as: :profile
 end
 
