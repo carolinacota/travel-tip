@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:username])
     authorize @user
     if @user.update(set_params)
       redirect_to profile_path(@user.username)

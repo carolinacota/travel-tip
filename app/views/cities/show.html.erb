@@ -14,14 +14,8 @@
           <div class="d-flex justify-content-between place-name">
               <h5><%= place.name %></h5>
             <div>
-              <% if @list.city.nil? %>
-                <%= link_to city_lists_path(@city), method: :post do  %>
-                  <i class="fas fa-plus"></i>
-                <% end %>
-              <% else %>
-                <%= link_to city_list_path(@city, @list) do %>
-                  <i class="fas fa-plus"></i>
-                <% end %>
+              <%= link_to city_place_listplaces_path(@city, place), method: :post do %>
+                <i class="fas fa-plus"></i>
               <% end %>
             </div>
          </div>

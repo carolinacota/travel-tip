@@ -12,4 +12,11 @@ class User < ApplicationRecord
 
   has_many :lists
 
+  def get_wishlist(city)
+    lists.find{ |list| list.city == city  && list.is_wishlist == true }
+  end
+
+  def to_param
+    username
+  end
 end
