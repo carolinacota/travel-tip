@@ -117,10 +117,12 @@
 
 .nav-item > a {
     color: $pink;
+    text-decoration: none;
 }
 
 .nav-item > a:hover {
     opacity: 0.6;
+    text-decoration: none;
 }
 
 #list-header {
