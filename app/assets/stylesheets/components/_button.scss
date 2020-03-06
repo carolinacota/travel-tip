@@ -12,3 +12,16 @@
   color: white;
   }
 }
+
+.btn-pink-tags {
+  color: white;
+  padding: 1px 9px;
+  border-radius: 3px;
+  background: $pink;
+  transition: background 0.3s ease;
+  font-size: 0.75em;
+  font-family: 'Roboto';
+  font-weight: 500;
+  margin-right: 8px;
+  opacity: 0.7;
+}

@@ -13,7 +13,7 @@
 }
 
 .tip-card {
-  height: 19vh;
+  height: 22vh;
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -103,6 +103,19 @@
   color: #8e9091;
  }
 }
+
+.card-tags{
+ margin-top: 8px;
+
+ p{
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+  color: #b9bdbf;
+ }
+}
+
+
 
 .place-name {
   h3{
