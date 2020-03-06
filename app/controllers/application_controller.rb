@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
   after_action :store_action
 
    include Pundit
@@ -32,6 +33,12 @@ class ApplicationController < ActionController::Base
         !request.xhr?) # don't store ajax calls
       store_location_for(:user, request.fullpath)
     end
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :username])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password, :username])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :password, :username])
   end
 
 end

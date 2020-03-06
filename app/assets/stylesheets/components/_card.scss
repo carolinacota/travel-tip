@@ -14,8 +14,8 @@
   }
 }
 
-.tip-card {
-  height: 22vh;
+.place-card {
+  height: 25vh;
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -47,11 +47,11 @@
 
 .place-name {
   height: 30%;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .rating-city-card{
-  height: 20%;
+  height: 10%;
 }
 
 .card-tips{
@@ -110,7 +110,7 @@
 // }
 
 .card-tips{
- margin-top: 3px;
+ margin-top: 7px;
 
  p{
   margin: 0px;
@@ -128,7 +128,7 @@
 }
 
 .card-tags{
- margin-top: 8px;
+ margin-top: 25px;
 
  p{
   margin: 0px;
@@ -137,8 +137,6 @@
   color: #b9bdbf;
  }
 }
-
-
 
 .place-name {
   h3{
@@ -223,5 +221,42 @@
   p {
     font-size: 18px;
   }
+}
+
+
+.followee-card {
+  height: 100px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  a {
+    color: black;
+  }
+
+  img {
+    object-fit: cover;
+    max-width: 30vw;
+  }
+
+  h5{
+    margin-bottom: 0px;
+    // white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+}
+
+.followee-card:hover {
+  opacity: 0.6;
+  text-decoration: none;
 }
 

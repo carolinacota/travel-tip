@@ -32,9 +32,21 @@
         <% end %>
       </div>
       <div class="followers">
-        <p class="align-middle"><small>  <i class="fas fa-heart align middle p-1">  </i> 223 followers </small></p>
+        <%= link_to followers_path(@user) do %>
+          <p class="align-middle"><small><i class="fas fa-heart align middle p-1"></i><%= pluralize(@user.number_of_followers, 'follower') %></small></p>
+        <% end %>
+
         <% if current_user != @user %>
-        <p class="align-middle"><small>  <i class="fas fa-users align middle p-1">  </i> Follow <%= @user.username%></small></p>
+
+          <% if current_user.following?(@user) %>
+            <%= link_to follow_path(@user), method: :delete do %>
+              <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Unfollow <%= @user.username%></small></p>
+            <% end %>
+            <% else %>
+            <%= link_to follow_path(@user), method: :post do %>
+              <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Follow <%= @user.username%></small></p>
+            <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -59,7 +71,6 @@
       </div>
     </div>
     <% else %>
-
       <h4 id="list-header"><%= @user.username %>'s lists</h4>
       <%= render 'lists/list', lists: @lists %>
     <% end %>

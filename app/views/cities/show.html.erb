@@ -7,19 +7,15 @@
     <h3>Discover <%= @city.name.capitalize %>'s TOP tips</h3>
   </div>
 
-
-
   <button type="button" class="btn btn-pink-tags" data-toggle="modal" data-target="#myModal2">Filter</button>
-  <%= link_to "Reset", city_path  %>
+  <%= link_to "Reset", city_path, class:"reset" %>
 
   <!-- Modal 2 -->
   <div id="myModal2" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
       <!-- Modal content-->
       <div class="modal-content">
-
-         <div class="col-xs-12 col-sm-12" style="height: 75vh">
+        <div class="col-xs-12 col-sm-12" style="height: 75vh">
           <%= simple_form_for :search, url: city_path, method: "GET" do |f| %>
             <%= f.input :foods, label: "Food & Drinks", required: false,  collection: Place::FOODS, as: :check_boxes %>
             <%= f.input :sights, label: "Sights", required: false,  collection: Place::SIGHTS, as: :check_boxes %>
@@ -27,22 +23,16 @@
             <%= f.submit "Apply Filter", class: "btn btn-primary" %>
           <% end %>
         </div>
-
       </div>
-
     </div>
   </div>
 
-
-    <% if params["search"] %>
-      <% @filter = params["search"]["foods"].concat(params["search"]["sights"]).flatten.reject(&:blank?) %>
-        <% @places = @filter.empty? ? @city.places : @city.places.tagged_with(@filter, any: true) %>
-          <% else %>
-        <% @places = @city.places %>
-    <% end %>
-
-
-
+  <% if params["search"] %>
+    <% @filter = params["search"]["foods"].concat(params["search"]["sights"]).flatten.reject(&:blank?) %>
+    <% @places = @filter.empty? ? @city.places : @city.places.tagged_with(@filter, any: true) %>
+  <% else %>
+    <% @places = @city.places %>
+  <% end %>
 
   <% @places.each do |place| %>
     <%= link_to city_place_path(@city, place) do %>
@@ -85,12 +75,7 @@
               </div>
             <% end %>
            </div>
-         </div>
-
-
-            </div>
-         </div>
-       </div>
+        </div>
       </div>
     <% end %>
   <% end %>
@@ -98,10 +83,10 @@
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-xl" >
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content" style="border-radius: 4px;">
 
      <div
           id="map"
@@ -114,6 +99,12 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
           style="border: 1px solid black"
         ></div>
+      <div class="btn btn-current-location">
+        <div class="current-location">
+          <i class="fas fa-map-marker-alt" style="margin-right: 4px"></i>
+          <%= link_to "Find places in my current location.", "#", id:'current-location'%>
+        </div>
+      </div>
 
     </div>
 
