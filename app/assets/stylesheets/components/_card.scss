@@ -15,7 +15,7 @@
 }
 
 .place-card {
-  height: 19vh;
+  height: 25vh;
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -47,11 +47,11 @@
 
 .place-name {
   height: 30%;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .rating-city-card{
-  height: 20%;
+  height: 10%;
 }
 
 .card-tips{
@@ -110,7 +110,7 @@
 // }
 
 .card-tips{
- margin-top: 3px;
+ margin-top: 7px;
 
  p{
   margin: 0px;
@@ -127,12 +127,24 @@
  }
 }
 
+.card-tags{
+ margin-top: 25px;
+
+ p{
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+  color: #b9bdbf;
+ }
+}
+
 .place-name {
   h3{
     font-size: 30px;
     font-weight: 700;
   }
 }
+
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   background-color: $pink;
@@ -211,6 +223,7 @@
   }
 }
 
+
 .followee-card {
   height: 100px;
   display: flex;
@@ -246,3 +259,4 @@
   opacity: 0.6;
   text-decoration: none;
 }
+

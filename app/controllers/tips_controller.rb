@@ -20,7 +20,7 @@ end
 private
 
 def tip_params
-  params.require(:tip).permit(:content, :rating)
+  params.require(:tip).permit(:content, :rating, :photo)
 end
 
 end
