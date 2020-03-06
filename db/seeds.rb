@@ -9,6 +9,7 @@ require 'open-uri'
 
 puts "Destroying users, cities, categories and places."
 
+Follow.destroy_all
 Place.destroy_all
 List.destroy_all
 City.destroy_all
