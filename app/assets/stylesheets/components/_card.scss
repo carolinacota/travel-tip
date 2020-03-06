@@ -15,7 +15,7 @@
 }
 
 .place-card {
-  height: 22vh;
+  height: 25vh;
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -47,11 +47,11 @@
 
 .place-name {
   height: 30%;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .rating-city-card{
-  height: 20%;
+  height: 10%;
 }
 
 .card-tips{
@@ -110,7 +110,7 @@
 // }
 
 .card-tips{
- margin-top: 3px;
+ margin-top: 7px;
 
  p{
   margin: 0px;
@@ -128,7 +128,7 @@
 }
 
 .card-tags{
- margin-top: 8px;
+ margin-top: 25px;
 
  p{
   margin: 0px;
@@ -137,8 +137,6 @@
   color: #b9bdbf;
  }
 }
-
-
 
 .place-name {
   h3{
