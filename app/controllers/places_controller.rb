@@ -8,6 +8,13 @@ def show
   @list = List.where(user: current_user, city: @city).first
   @list = List.new if @list.nil?
   authorize @place
+
+  @markers = [{
+      lat: @place.latitude,
+      lng: @place.longitude,
+      infoWindow: render_to_string(partial: "places/info_window_place_show", locals: { place: @place })
+    }]
+
 end
 
 private
