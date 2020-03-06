@@ -1,6 +1,7 @@
 
 <% places.each do |place| %>
   <% if is_wishlist %>
+    <h1>
     <%= render 'places/wishlist_card', place: place %>
   <% else %>
     <%= render 'places/card', place: place %>
