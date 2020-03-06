@@ -223,3 +223,40 @@
   }
 }
 
+
+.followee-card {
+  height: 100px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  a {
+    color: black;
+  }
+
+  img {
+    object-fit: cover;
+    max-width: 30vw;
+  }
+
+  h5{
+    margin-bottom: 0px;
+    // white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+}
+
+.followee-card:hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+
