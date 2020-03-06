@@ -25,6 +25,10 @@ class Place < ApplicationRecord
     slug
   end
 
+  def get_user_tip(user)
+    tips.find{ |t| t.user == user }
+  end
+
   private
 
     def set_slug

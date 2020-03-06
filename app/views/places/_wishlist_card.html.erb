@@ -1,18 +1,18 @@
 <div class="tip-card m-2">
   <img src="https://source.unsplash.com/random/?food" alt="" class="image">
-  <div class="place-card-text ml-3">
-    <div class="d-flex">
+  <div class="place-card-text  ml-3">
+    <h3><%= place.name %></h3>
+    <div class="d-flex flex-column">
       <div class="place-name flex-grow-1">
-        <h3><%= place.name %></h3>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
       </div>
-    </div>
-    <div class="card-tips">
-      <%= link_to "Add a tip", new_city_place_tip_path(place.city, place) %>
+      <div class="card-tips">
+        <p class="mt-2" style="font-size: 15px"><%= link_to "Add a tip", new_city_place_tip_path(place.city, place) %></p>
+      </div>
     </div>
   </div>
 </div>

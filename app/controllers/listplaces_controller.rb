@@ -22,7 +22,7 @@ class ListplacesController < ApplicationController
   end
 
   def set_place
-    @place = Place.find_by(slug: params[:place_name])
+    @place = Place.find_by(slug: params[:place_slug])
   end
 end
 
