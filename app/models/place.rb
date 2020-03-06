@@ -7,8 +7,8 @@ class Place < ApplicationRecord
 
   belongs_to :city
   belongs_to :category
-  has_many :tips
-  has_many :listplaces
+  has_many :tips, dependent: :destroy
+  has_many :listplaces, dependent: :destroy
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 

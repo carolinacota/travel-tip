@@ -3,13 +3,12 @@
   <h1 class="title">In friends <br> we trust.</h1>
   <p>Local recommendations from people you trust.</p>
 
-  <%= form_tag(root_path, method: 'get', class: "form-inline") do %>
+  <%= form_tag(root_path, method: 'get') do %>
     <div id= "search-data" class="form-search search-data d-flex" >
       <%= text_field_tag :query, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for friends or cities" %>
-      <%= submit_tag "Discover", class: "btn btn-pink" %>
     </div>
   <% end %>
-<div>
+<div class="current-location">
     <i class="fas fa-map-marker-alt"></i>
     <%= link_to "Use my current location.", "#", id:'current-location'%>
   </div>

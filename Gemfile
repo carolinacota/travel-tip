@@ -17,14 +17,11 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem 'cloudinary', '~> 1.12.0'
-
 gem 'pundit'
-
-gem 'dotenv-rails', groups: [:development, :test]
-
 gem 'geocoder'
 
 gem 'acts-as-taggable-on', '~> 6.0'
+
 
 
 group :development do
