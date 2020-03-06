@@ -28,7 +28,14 @@
 
   <% @place.tips.reverse.each do |tip| %>
   <div class="tip-card m-2">
-    <img src="https://source.unsplash.com/random/?food" alt="">
+    <!-- img src="https://source.unsplash.com/random/?food" alt=""> -->
+    <% if tip.photo.attached? %>
+      <%= cl_image_tag tip.photo.key %>
+    <% else %>
+      <img src="https://source.unsplash.com/random/?food" alt="">
+    <% end %>
+
+
     <div class="content ml-3 d-flex align-items-start justify-content-center flex-column">
       <div class="tip-content">
         <h5><%= tip.content %></h5>

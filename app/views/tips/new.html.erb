@@ -4,6 +4,7 @@
     <%= simple_form_for [@city, @place, @tip] do |f| %>
       <%= f.input :content, require: true %>
       <%= f.input :rating, collection: 0..5, require: true %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit "Add a tip", class: "btn btn-pink" %>
     <% end %>
   </div>
