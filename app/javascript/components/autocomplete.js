@@ -1,6 +1,9 @@
 import 'js-autocomplete/auto-complete.css';
 import autocomplete from 'js-autocomplete';
 
+const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.substring(1)
+}
 const renderItem = function (item) {
     let icon, uri;
     if (item.type === 'user') {
@@ -17,7 +20,7 @@ const renderItem = function (item) {
       <div class="autocomplete-suggestion"
            data-uri="${uri}">
         ${icon}
-        <span>${item.name}</span>
+        <span>${capitalize(item.name)}</span>
       </div>
     `
 };
