@@ -14,8 +14,8 @@
   }
 }
 
-.place-card {
-  height: 19vh;
+.tip-card {
+  height: 22vh;
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -127,12 +127,26 @@
  }
 }
 
+.card-tags{
+ margin-top: 8px;
+
+ p{
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+  color: #b9bdbf;
+ }
+}
+
+
+
 .place-name {
   h3{
     font-size: 30px;
     font-weight: 700;
   }
 }
+
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   background-color: $pink;
@@ -210,3 +224,4 @@
     font-size: 18px;
   }
 }
+
