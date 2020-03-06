@@ -40,6 +40,10 @@ class User < ApplicationRecord
     return true if relationship
   end
 
+  def not_wishlists
+    lists.where(is_wishlist: false)
+  end
+
   def number_of_followers
     followers.count
   end

@@ -11,6 +11,11 @@ class FollowsController < ApplicationController
     redirect_to profile_path
   end
 
+  def followers
+    @user = @user
+    @followers = @user.followers
+  end
+
   private
 
   def set_user

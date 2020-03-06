@@ -10,6 +10,14 @@
   margin: 20px;
 
 }
+
+.avatar-medium {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-size: 100% auto;
+}
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
@@ -21,4 +29,8 @@
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+
+.placeholder-avatar{
+  background-color: grey;
 }

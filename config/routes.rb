@@ -22,8 +22,11 @@ Rails.application.routes.draw do
 
   scope '/:username' do
     resource :follow, only: %i[create destroy]
+
   end
 
+  get '/:username/followers', to: 'follows#followers', as: :followers
   get '/:username', to: 'users#show', as: :profile
+
 end
 
