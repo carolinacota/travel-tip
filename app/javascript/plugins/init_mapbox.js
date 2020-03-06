@@ -27,6 +27,8 @@ const initMapbox = () => {
         .addTo(map);
     });
 
+
+
     if (markers.length === 0) {
       map.setZoom(4)
     } else if (markers.length === 1) {
@@ -37,6 +39,22 @@ const initMapbox = () => {
       markers.forEach ((marker) => {
         bounds.extend([marker.lng, marker.lat]);
       });
+
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+        positionOptions: {
+        enableHighAccuracy: true
+        },
+        fitBoundsOptions: {
+          maxZoom: 12
+        },
+        trackUserLocation: true
+        }),
+        'top-left'
+      );
+
+
+
       map.fitBounds(bounds, { padding: 70, maxZoom: 14, duration: 3000 } )
     }
 
