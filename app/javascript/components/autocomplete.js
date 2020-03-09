@@ -7,10 +7,10 @@ const capitalize = (string) => {
 const renderItem = function (item) {
     let icon, uri;
     if (item.type === 'user') {
-      icon = '<i class="fas fa-user-circle"></i>';
+      icon = '<i class="fas fa-user"></i>';
       uri = `/${item.slug}`
     } else if (item.type === 'city') {
-      icon = '<i class="fas fa-city"></i>';
+      icon = '<i class="fas fa-map-pin"></i>';
       uri = '/cities/' + item.slug
     } else if (item.type === 'place') {
       icon = '<i class="fas fa-map-marker-alt"></i>';
