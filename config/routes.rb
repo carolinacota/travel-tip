@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   resource :autocomplete, only: [:show]
 
+  resource :avatar
+
   # resources :follows, only: %i[create destroy]
 
   scope '/:username' do

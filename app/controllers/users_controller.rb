@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     authorize @user
     @lists = List.where(user: @user, is_wishlist: false)
     @wishlists = List.where(user: @user, is_wishlist: true)
+    @picture = ""
   end
 
   def update
