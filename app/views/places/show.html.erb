@@ -50,6 +50,18 @@
       </div>
       <p>- <%= tip.user.username.capitalize %></p>
     </div>
+    <div class="vote d-flex">
+      <div class="upvote">
+        <%= link_to upvote_path(tip), method: :post do %>
+          <i class="fas fa-sort-up"></i>
+        <% end %>
+      </div>
+      <div class="downvote">
+        <%= link_to downvote_path(tip), method: :post do %>
+          <i class="fas fa-sort-down"></i>
+        <% end %>
+      </div>
+    </div>
   </div>
   <% end %>
 </div>

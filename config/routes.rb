@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get '/:username/followers', to: 'follows#followers', as: :followers
   get '/:username', to: 'users#show', as: :profile
 
-
+  post '/tips/:id', to: 'votes#upvote', as: :upvote
+  post '/tips/:id', to: 'votes#downvote', as: :downvote
 end
 
