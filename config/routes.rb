@@ -11,12 +11,15 @@ Rails.application.routes.draw do
       resources :tips, only: [:new, :create]
       resources :listplaces, only: :create
     end
+    get "/foursquare", to: 'foursquare_services#show'
     resources :lists, only: [:show, :create]
   end
 
   resources :tips, only: [:show]
 
   resource :autocomplete, only: [:show]
+
+  resources :places, only: :create
 
   # resources :follows, only: %i[create destroy]
 
