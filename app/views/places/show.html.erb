@@ -18,11 +18,11 @@
     <h1><%= @place.name %></h1>
   </div>
   <div class="d-flex justify-content-center add-tip">
-    <i class="fas fa-heart"></i>
+    <i class="fas fa-award" style="font-size: 20px;"></i>
     <p><%= link_to "Add a tip!", new_city_place_tip_path(@place.city, @place) %></p>
   </div>
 
-  <h3 class="pink"><%= @place.name %>'s tips</h3>
+  <h3 class="pink">Tips for <%= @place.name %></h3>
     <% @place.tips.reverse.each do |tip| %>
 
         <div class="tip-card m-2">
@@ -61,7 +61,7 @@
           <% end %>
           <div class="content ml-3 d-flex align-items-start justify-content-center flex-column">
             <div class="tip-content">
-              <h5><%= tip.content %></h5>
+              <h5>"<%= tip.content %>"</h5>
             </div>
             <div class="rating d-flex">
               <i class="fas fa-star" id="tip-star"></i>
@@ -106,6 +106,7 @@
     </div>
   </div>
   <% end %>
+
 
 </div>
 
