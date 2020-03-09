@@ -1,6 +1,7 @@
 class Tip < ApplicationRecord
   belongs_to :user
   belongs_to :place
+  has_many :votes
 
   has_one_attached :photo
   validates :photo, presence: true
