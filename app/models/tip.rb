@@ -2,8 +2,8 @@ class Tip < ApplicationRecord
   belongs_to :user
   belongs_to :place
 
-  has_one_attached :photo
-  validates :photo, presence: true
+  has_many_attached :photos
+  validates :photos, presence: true
   after_create :add_place_to_list
 
   def add_place_to_list
