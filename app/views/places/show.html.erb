@@ -52,12 +52,12 @@
     </div>
     <div class="vote d-flex">
       <div class="upvote">
-        <%= link_to upvote_path(tip), method: :post do %>
+        <%= link_to tip_upvote_path(tip), method: :post do %>
           <i class="fas fa-sort-up"></i>
         <% end %>
       </div>
       <div class="downvote">
-        <%= link_to downvote_path(tip), method: :post do %>
+        <%= link_to tip_downvote_path(tip), method: :post do %>
           <i class="fas fa-sort-down"></i>
         <% end %>
       </div>

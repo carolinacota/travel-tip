@@ -19,4 +19,12 @@ class Tip < ApplicationRecord
     end
     Listplace.create(place: place, list: list)
   end
+
+  def upvote!
+    increment!(:upvote)
+  end
+
+  def downvote!
+    increment!(:downvote)
+  end
 end
