@@ -36,9 +36,9 @@
           <p class="align-middle"><small><i class="fas fa-heart align middle p-1"></i><%= pluralize(@user.number_of_followers, 'follower') %></small></p>
         <% end %>
 
-        <% if user_signed_in? && current_user != @user %>
+        <% if current_user != @user %>
 
-          <% if current_user.following?(@user) %>
+          <% if user_signed_in? && current_user.following?(@user) %>
             <%= link_to follow_path(@user), method: :delete do %>
               <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Unfollow <%= @user.username%></small></p>
             <% end %>
