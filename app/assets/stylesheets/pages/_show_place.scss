@@ -32,7 +32,32 @@
       color: #ff7fbb;
     }
   }
+}
 
+.add-tip-small {
+  margin-top: 1px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 10px;
+  color: $pink;
+
+  a{
+    text-decoration: none;
+    color: $pink;
+    &:hover{
+      color: #ff7fbb;
+    }
+  p{
+    color: $pink;
+    font-size: 10px;
+    }
+   }
+  }
+
+
+.fa-star-tip{
+  font-size: 12px;
+  color: $pink;
 }
 
 #place-plus {

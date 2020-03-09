@@ -6,9 +6,13 @@
     <h1><%= @city.name %></h1>
     <% if @list.is_wishlist? %>
       <h3>Your Wishlist</h3>
-      <p><small>Go on and add some tips!</small></p>
+      <p style="color: $pink; opacity: 0.6"><small>Go on and add some tips!</small></p>
     <% else %>
-      <h3><%= @list.user.username %>'s Tips</h3>
+        <%if @user == current_user %>
+          <h3>My Tips</h3>
+        <%else %>
+          <h3><%= @list.user.username %>'s Tips</h3>
+        <% end %>
     <% end %>
   </div>
 <%= render 'places/list', places: @list.places, is_wishlist: @list.is_wishlist %>

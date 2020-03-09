@@ -10,11 +10,14 @@ initMapbox();
 placeMapbox();
 
 import { autocompleteSearch } from '../components/autocomplete'
+import { foursquareSearch } from '../components/foursquare'
 
 import { getCurrentPosition } from '../plugins/geolocation'
 import { avatarUpload } from '../plugins/avatar_upload'
 
 autocompleteSearch();
 getCurrentPosition();
+avatarUpload();
+foursquareSearch();
 avatarUpload()
 initAvatarFilters();

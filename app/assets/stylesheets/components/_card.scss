@@ -12,6 +12,11 @@
   h3{
     color: $light-grey;
   }
+
+  p{
+    color: black;
+    opacity: 0.6;
+  }
 }
 
 .place-card {
@@ -63,6 +68,9 @@
   margin: 5px;
   width: 70%;
   overflow: hidden;
+   a {
+    color: black;
+  }
 }
 
 
@@ -165,12 +173,14 @@
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: $pink; }
+  color: gray;
+  justify-content: center;
+   }
 
 // TIP CARDS //
 
 .tip-card {
-  height: 19vh;
+  height: 21vh;
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -189,6 +199,12 @@
     font-size: 25px;
     margin: 0;
   }
+}
+
+.fa-award {
+  color: $pink;
+  font-size: 16px;
+  padding: 5px;
 }
 
 .rating{
@@ -223,6 +239,10 @@
   }
 }
 
+.fa-star {
+  font-size: 12px;
+  color: $grey;
+}
 
 .followee-card {
   height: 100px;
