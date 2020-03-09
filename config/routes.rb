@@ -15,11 +15,17 @@ Rails.application.routes.draw do
     resources :lists, only: [:show, :create]
   end
 
-  resources :tips, only: [:show]
+  resources :tips, only: [:show] do
+    resource :upvote, only: [:create]
+    resource :downvote, only: [:create]
+  end
 
   resource :autocomplete, only: [:show]
 
   resources :places, only: :create
+
+  resource :avatar
+
 
   # resources :follows, only: %i[create destroy]
 
@@ -31,5 +37,7 @@ Rails.application.routes.draw do
   get '/:username/followers', to: 'follows#followers', as: :followers
   get '/:username', to: 'users#show', as: :profile
 
+  # post '/tips/:id', to: 'votes#upvote', as: :upvote
+  # post '/tips/:id', to: 'votes#downvote', as: :downvote
 end
 

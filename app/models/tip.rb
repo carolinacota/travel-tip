@@ -1,9 +1,10 @@
 class Tip < ApplicationRecord
   belongs_to :user
   belongs_to :place
+  has_many :votes, dependent: :destroy
 
-  has_one_attached :photo
-  validates :photo, presence: true
+  has_many_attached :photos
+  validates :photos, presence: true
   after_create :add_place_to_list
 
   def add_place_to_list
@@ -17,5 +18,13 @@ class Tip < ApplicationRecord
       end
     end
     Listplace.create(place: place, list: list)
+  end
+
+  def upvote!
+    increment!(:upvote)
+  end
+
+  def downvote!
+    increment!(:downvote)
   end
 end
