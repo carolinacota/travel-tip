@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
 before_action :set_place, only: [:show]
-skip_before_action :authenticate_user!, only: [:show]
+skip_before_action :authenticate_user!, only: [:show, :create]
 # has_many :tips
 
 def show
@@ -14,6 +14,10 @@ def show
       lng: @place.longitude,
       infoWindow: render_to_string(partial: "places/info_window_place_show", locals: { place: @place })
     }]
+
+end
+
+def create
 
 end
 

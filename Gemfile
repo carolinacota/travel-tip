@@ -21,7 +21,7 @@ gem 'pundit'
 gem 'geocoder'
 
 gem 'acts-as-taggable-on', '~> 6.0'
-
+gem 'foursquare2'
 
 
 group :development do
