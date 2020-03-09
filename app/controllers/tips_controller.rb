@@ -17,7 +17,6 @@ def create
   authorize @tip
 end
 
-
 private
 
 def tip_params
