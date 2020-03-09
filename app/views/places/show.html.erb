@@ -22,13 +22,13 @@
     <p><%= link_to "Add a tip!", new_city_place_tip_path(@place.city, @place) %></p>
   </div>
 
+
   <h3 class="pink">Tips for <%= @place.name %></h3>
     <% @place.tips.reverse.each do |tip| %>
-
         <div class="tip-card m-2">
           <!-- img src="https://source.unsplash.com/random/?food" alt=""> -->
           <% if tip.photos.attached? %>
-            <%#= cl_image_tag tip.photos[0].key %>
+
             <!-- Carousel -->
               <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -56,19 +56,16 @@
                   <span class="sr-only">Next</span>
                 </a>
               </div>
+
+            <!-- end of carousel -->
+
           <% else %>
             <img src="https://source.unsplash.com/random/?food" alt="">
           <% end %>
+
           <div class="content ml-3 d-flex align-items-start justify-content-center flex-column">
             <div class="tip-content">
               <h5>"<%= tip.content %>"</h5>
-            </div>
-            <div class="rating d-flex">
-              <i class="fas fa-star" id="tip-star"></i>
-              <i class="fas fa-star" id="tip-star"></i>
-              <i class="fas fa-star" id="tip-star"></i>
-              <i class="fas fa-star" id="tip-star"></i>
-              <i class="fas fa-star" id="tip-star"></i>
             </div>
             <% if tip.user == current_user %>
               <p>- <%= link_to "Me", profile_path(tip.user.username) %></p>
@@ -76,45 +73,28 @@
               <p>- <%= link_to tip.user.username.capitalize, profile_path(tip.user.username) %></p>
             <% end %>
           </div>
+
+          <div class="vote ml-3 d-flex align-items-start justify-content-center flex-column">
+            <div class="upvote">
+              <%= pluralize(tip.upvote, 'uptip') %>
+              <%= link_to tip_upvote_path(tip), method: :post do %>
+                <i class="fas fa-sort-up"></i>
+              <% end %>
+            </div>
+            <div class="tip-score">
+              <%= tip.upvote - tip.downvote %>
+            </div>
+            <div class="downvote">
+              <%= link_to tip_downvote_path(tip), method: :post do %>
+                <i class="fas fa-sort-down"></i>
+              <% end %>
+              <%= pluralize(tip.downvote, 'downtip') %>
+            </div>
+          </div>
+
         </div>
-    <% end %>
-
-
-
-    <div class="content ml-3 d-flex align-items-start justify-content-center flex-column">
-      <div class="tip-content">
-        <h5><%= tip.content %></h5>
-      </div>
-      <p>- <%= tip.user.username.capitalize %></p>
-    </div>
-    <div class="vote ml-3 d-flex align-items-start justify-content-center flex-column">
-      <div class="upvote">
-        <%= pluralize(tip.upvote, 'uptip') %>
-        <%= link_to tip_upvote_path(tip), method: :post do %>
-          <i class="fas fa-sort-up"></i>
-        <% end %>
-      </div>
-      <div class="tip-score">
-        <%= tip.upvote - tip.downvote %>
-      </div>
-      <div class="downvote">
-        <%= link_to tip_downvote_path(tip), method: :post do %>
-          <i class="fas fa-sort-down"></i>
-        <% end %>
-        <%= pluralize(tip.downvote, 'downtip') %>
-      </div>
-    </div>
+      <% end %>
   </div>
-  <% end %>
-
-
-</div>
-
-
-
-<% myTip = @place.tips.last %>
-<%= cl_image_tag myTip.photos[0].key %>
-<%= cl_image_tag myTip.photos[1].key %>
 
 <!-- Map Modal -->
 <div id="myModalPlace" class="modal fade" role="dialog">
