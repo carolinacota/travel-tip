@@ -15,12 +15,12 @@
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="col-xs-12 col-sm-12" style="height: 75vh">
+        <div class="col-xs-12 col-sm-12" style="height: 92vh">
           <%= simple_form_for :search, url: city_path, method: "GET" do |f| %>
             <%= f.input :foods, label: "Food & Drinks", required: false,  collection: Place::FOODS, as: :check_boxes %>
             <%= f.input :sights, label: "Sights", required: false,  collection: Place::SIGHTS, as: :check_boxes %>
             <%= f.input :entertainments, label: "Entertainment", required: false,  collection: Place::ENTERTAINMENTS, as: :check_boxes %>
-            <%= f.submit "Apply Filter", class: "btn btn-primary" %>
+            <%= f.submit "Apply Filter", class: "btn-pink" %>
           <% end %>
         </div>
       </div>
@@ -33,6 +33,19 @@
   <% else %>
     <% @places = @city.places %>
   <% end %>
+
+
+ <!-- foursquare form  -->
+<!--   <div class="search">
+    <%= form_tag(root_path, method: 'get') do %>
+      <%= text_field_tag :q,
+        params[:query],
+        autocomplete: :off,
+        class: "form-control search-form", id:"foursquare-bar",
+        placeholder: "Something else?"
+      %>
+    <% end %>
+  </div> -->
 
   <% @places.each do |place| %>
     <%= link_to city_place_path(@city, place) do %>
