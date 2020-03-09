@@ -30,10 +30,9 @@
         <li class="nav-item">
           <%= link_to "Profile", profile_path(current_user), class: "nav-link" %>
         </li>
-          <!-- CHANGE THIS PATH TO FRIENDS PATH -->
-<!--         <li class="nav-item">
-          <%#= link_to "Friends", new_user_session_path, class: "nav-link" %>
-        </li> -->
+         <li class="nav-item">
+          <%= link_to "Followers", followers_path(current_user.username), class: "nav-link" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
