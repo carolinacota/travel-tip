@@ -17,13 +17,10 @@ def create
   authorize @tip
 end
 
-def show
-end
-
 private
 
 def tip_params
-  params.require(:tip).permit(:content, :rating, :photo)
+  params.require(:tip).permit(:content, :rating, photos: [])
 end
 
 end
