@@ -1,18 +1,34 @@
 <div class="tip-card m-2">
   <img src="https://source.unsplash.com/random/?food" alt="" class="image">
-  <div class="place-card-text  ml-3" style="height: 24vh">
-    <div class="d-flex">
-      <div class="place-name flex-grow-1">
+  <div class="place-card-text  ml-3">
+    <div class="d-flex flex-column justify-content-between" style="height: 100%">
+      <div class="place-name">
         <h4><%= link_to place.name, city_place_path(place.city, place) %></h4>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
       </div>
+      <div class="card-tips flex-grow-1">
+        <div class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <% place.get_user_tips(@list.user).each_with_index do |tip, i| %>
+            <div class="carousel-item <%= i == 0 ? "active" : "" %>">
+              <p  style="font-size: 15px;">"<%= tip.content %>"</p>
+              <p style="font-size: 15px"><%= tip.created_at.strftime("%d %b '%y") %></p>
+
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <p class="m-2" style="font-size: 12px">
+        <button type="button" class="btn btn-pink-tags" data-toggle="modal" data-target="#myModal-place-<%= place.id %>">Re-tip</button>
+        </p>
     </div>
-    <div class="card-tips">
-      <p class="mt-2" style="font-size: 15px">"<%= place.get_user_tip(@list.user).content %>"</p>
+  </div>
+</div>
+
+<div id="myModal-place-<%= place.id %>" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-xl" >
+    <div class="modal-content">
+      <%= render "tips/form", city: place.city, place: place, tip: Tip.new %>
     </div>
   </div>
 </div>
