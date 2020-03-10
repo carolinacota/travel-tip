@@ -72,19 +72,25 @@
       <% if tip.user != current_user %>
         <div class="vote ml-3 d-flex align-items-start justify-content-center flex-column">
           <div class="upvote">
-            <%= pluralize(tip.upvote, 'uptip') %>
-            <%= link_to tip_upvote_path(tip), method: :post do %>
+            <span id="upvotes_<%= dom_id(tip) %>">
+              <%= pluralize(tip.upvote, 'uptip') %>
+            </span>
+            <%= link_to tip_upvote_path(tip), method: :post, remote: true do %>
               <i class="fas fa-sort-up"></i>
             <% end %>
           </div>
           <div class="tip-score">
-            <%= tip.upvote - tip.downvote %>
+            <span id="difference_<%= dom_id(tip) %>">
+              <%= tip.upvote - tip.downvote %>
+            </span>
           </div>
           <div class="downvote">
-            <%= link_to tip_downvote_path(tip), method: :post do %>
+            <%= link_to tip_downvote_path(tip), method: :post, remote: true do %>
               <i class="fas fa-sort-down"></i>
             <% end %>
-            <%= pluralize(tip.downvote, 'downtip') %>
+            <span id="downvotes_<%= dom_id(tip) %>">
+              <%= pluralize(tip.downvote, 'downtip') %>
+            </span>
           </div>
         </div>
       <% end %>
