@@ -10,9 +10,19 @@ class DownvotesController < ApplicationController
         @tip.downvote += 1
         @tip.save(validate: false)
         @vote.update(action: "downvote")
+
+        respond_to do |format|
+          format.html { redirect_to request.referer }
+          format.js  { render "upvotes/create.js.erb" }
+        end
       elsif @vote.action.nil?
         @tip.downvote!
         @vote.update(action: "downvote")
+
+        respond_to do |format|
+          format.html { redirect_to request.referer }
+          format.js  { render "upvotes/create.js.erb" }
+        end
       end
     end
   end
