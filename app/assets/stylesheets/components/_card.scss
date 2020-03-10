@@ -184,7 +184,14 @@
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
+  .carousel-container{
+    width: 40%;
+    .tip-photo{
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
  img {
     object-fit: cover;
     width: 30%
@@ -198,6 +205,12 @@
     color: $grey;
     font-size: 25px;
     margin: 0;
+  }
+}
+#tip-carousel{
+ .carousel-control-next,
+  .carousel-control-prev {
+      filter: invert(100%);
   }
 }
 

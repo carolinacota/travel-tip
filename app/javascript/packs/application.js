@@ -5,7 +5,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { placeMapbox } from '../plugins/place_mapbox';
 import { initAvatarFilters } from '../components/avatar_filters';
 
-
 initMapbox();
 placeMapbox();
 
@@ -14,7 +13,9 @@ import { foursquareSearch } from '../components/foursquare'
 
 import { getCurrentPosition } from '../plugins/geolocation'
 import { avatarUpload } from '../plugins/avatar_upload'
+import { initSwiper} from "../plugins/swiper"
 
+initSwiper();
 autocompleteSearch();
 getCurrentPosition();
 avatarUpload();

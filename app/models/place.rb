@@ -25,8 +25,8 @@ class Place < ApplicationRecord
     slug
   end
 
-  def get_user_tip(user)
-    tips.find{ |t| t.user == user }
+  def get_user_tips(user)
+    tips.select{ |t| t.user == user }
   end
 
   private

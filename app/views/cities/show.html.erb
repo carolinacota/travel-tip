@@ -35,17 +35,7 @@
   <% end %>
 
 
- <!-- foursquare form  -->
-<!--   <div class="search">
-    <%= form_tag(root_path, method: 'get') do %>
-      <%= text_field_tag :q,
-        params[:query],
-        autocomplete: :off,
-        class: "form-control search-form", id:"foursquare-bar",
-        placeholder: "Something else?"
-      %>
-    <% end %>
-  </div> -->
+
 
   <% @places.each do |place| %>
     <%= link_to city_place_path(@city, place) do %>
@@ -60,10 +50,12 @@
               <% end %>
              </div>
            </div>
-           <div class="card-tips">
-             <p><%= place.tips.last.user.username %></p>
-             <h3><%= place.tips.last.content %></h3>
-           </div>
+            <% unless place.tips.empty? %>
+             <div class="card-tips">
+               <p><%= place.tips.first.user.username %></p>
+               <h3><%= place.tips.first.content %></h3>
+             </div>
+            <% end %>
            <div class="d-flex card-tags">
             <% place.food_list.each do |tag| %>
               <div class="btn-pink-tags">
@@ -98,14 +90,14 @@
           id="map"
           style="
           height: 75vh;
-          overflow: visible;
+          overflow: hidden;
           margin-left: -0%;
           margin-top: -0%;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
           style="border: 1px solid black"
         ></div>
-      <div class="btn btn-current-location">
+      <div class="btn location-box">
         <div class="current-location">
           <i class="fas fa-map-marker-alt" style="margin-right: 4px"></i>
           <%= link_to "Find places in my current location.", "#", id:'current-location'%>
