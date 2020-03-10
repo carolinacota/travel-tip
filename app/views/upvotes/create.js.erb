@@ -1,12 +1,14 @@
+var upvotes = document.getElementById('upvotes_tip_<%= @tip.id %>');
+var downvotes = document.getElementById('downvotes_tip_<%= @tip.id %>');
+
 // var upvotes = document.getElementById('upvotes_tip_<%= @tip.id %>');
-// upvotes.innerHTML = '<%= pluralize(@tip.upvote, "uptip") %>';
+upvotes.innerHTML = '<%= @tip.upvote %>';
 
 // var downvotes = document.getElementById('downvotes_tip_<%= @tip.id %>');
-// downvotes.innerHTML = '<%= pluralize(@tip.downvote, "downtip") %>';
+downvotes.innerHTML = '<%= @tip.downvote %>';
 
 var difference = document.getElementById('difference_tip_<%= @tip.id %>');
 difference.innerHTML = '<%= @tip.upvote - @tip.downvote %>';
-
 
 // toggle class if negative number to get red
 
