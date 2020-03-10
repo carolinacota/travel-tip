@@ -23,7 +23,7 @@
   </div>
 
   <h3 class="pink">Tips for <%= @place.name %></h3>
-  <% @place.tips.reverse.each do |tip| %>
+  <% @tips.each do |tip| %>
     <div class="tip-card m-2">
       <!-- img src="https://source.unsplash.com/random/?food" alt=""> -->
       <% if tip.photos.attached? %>
@@ -73,7 +73,7 @@
         <div class="vote ml-3 d-flex align-items-start justify-content-center flex-column">
           <div class="upvote">
             <span id="upvotes_<%= dom_id(tip) %>">
-              <%= pluralize(tip.upvote, 'uptip') %>
+              <%#= pluralize(tip.upvote, 'uptip') %>
             </span>
             <%= link_to tip_upvote_path(tip), method: :post, remote: true do %>
               <i class="fas fa-sort-up"></i>
@@ -89,7 +89,7 @@
               <i class="fas fa-sort-down"></i>
             <% end %>
             <span id="downvotes_<%= dom_id(tip) %>">
-              <%= pluralize(tip.downvote, 'downtip') %>
+              <%#= pluralize(tip.downvote, 'downtip') %>
             </span>
           </div>
         </div>
