@@ -23,7 +23,7 @@
   </div>
 
   <h3 class="pink">Tips for <%= @place.name %></h3>
-  <% @place.tips.reverse.each do |tip| %>
+  <% @tips.each do |tip| %>
     <div class="tip-card m-2">
       <!-- img src="https://source.unsplash.com/random/?food" alt=""> -->
       <% if tip.photos.attached? %>
