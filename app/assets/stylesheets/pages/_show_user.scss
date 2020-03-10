@@ -35,3 +35,17 @@ div.boolean, .simple_form input[type='submit'] {
     box-shadow: 0 0 0 .2rem $gray-400;
   }
 }
+
+.followers {
+  a {
+    color: black
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.count-votes p {
+  margin-bottom: 0;
+}

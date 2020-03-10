@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     @lists = List.where(user: @user, is_wishlist: false)
     @wishlists = List.where(user: @user, is_wishlist: true)
     @picture = ""
+    @tips = Tip.where(user: @user)
+    @upvotes = count_upvotes(@tips)
   end
 
   def update
@@ -22,5 +24,13 @@ class UsersController < ApplicationController
 
   def set_params
     params.require(:user).permit(:photo, :bio)
+  end
+
+  def count_upvotes(tips)
+    upvote = 0
+    tips.each do |tip|
+      upvote += tip.upvote
+    end
+    upvote
   end
 end
