@@ -21,7 +21,8 @@ div.boolean, .simple_form input[type='submit'] {
 }
 
 .input {
-  border-color: red;
+  border-color: $pink !important;
+  background-color: transparent;
 }
 
 .form-group {
@@ -54,8 +55,18 @@ div.boolean, .simple_form input[type='submit'] {
   margin-bottom: 0 !important;
 }
 
-// input#user_bio {
-//   border-color: $pink;
-//   border: $pink;
-//   background-color: $light-grey;
-// }
+.wrapper {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.user-photo {
+  width: 40%;
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  bottom: -4%;
+  left: 33%;
+}
