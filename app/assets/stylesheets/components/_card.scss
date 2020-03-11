@@ -86,24 +86,37 @@
 
 /* CITY CARD INSIDE THE PROFILE */
 .city-card {
-  height: 14vh;
+  height: 13vh;
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
-  i {
-    color: gray;
-  }
-
-  p {
-    color: gray;
-    font-size: 15px;
-  }
+  background-size: cover;
+  background-position: center center;
 }
 
-.followers {
-  color: gray;
+.image-list{
+  width: 40vw;
 }
+
+.list-card-info{
+  margin-left: 5px;
+  margin-top: 7px;
+}
+
+.list-name{
+  color:black;
+}
+
+.list-card-icons{
+  font-size: 15px;
+  color: $grey;
+}
+
+
+
+// .followers {
+//   color: gray;
+// }
 
 // .nav-item {
 //   background-color: pink;
@@ -146,16 +159,23 @@
 
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  border: 1px solid $pink;
+  color: white;
   background-color: $pink;
+  font-weight: 500;
+
 }
+
+
 
 .nav-item > a {
     color: $pink;
     text-decoration: none;
+    font-size: 12px;
 }
 
 .nav-item > a:hover {
-    opacity: 0.6;
+    // opacity: 0.6;
     text-decoration: none;
 }
 

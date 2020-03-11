@@ -15,7 +15,7 @@
         <div class="followee-card d-flex">
           <div class="followee-photo">
             <% if follower.photo.attached? %>
-              <%= cl_image_tag follower.photo.key, :class => "avatar-medium m-auto", id: "friends-avatar" %>
+              <%= cl_image_tag follower.photo.key, :class => "avatar-medium m-auto", id: "avatar-upload" %>
             <% else %>
               <div class="placeholder-avatar avatar-medium"></div>
             <% end %>
