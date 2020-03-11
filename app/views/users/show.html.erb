@@ -1,24 +1,22 @@
 <div class="container">
-  <!-- Username, photo upload, followers, uptips -->
-  <div class="d-flex flex-column">
-    <div class="d-flex">
-      <div class="user-photo">
+  <div class="user-container d-flex align-items-between">
+    <div class="user-photo">
         <!-- upload picture form -->
-        <div class="hidden-form" style="
-          position: absolute;
-          top: -10000px;
-        ">
-          <%= simple_form_for(@user) do |f| %>
-            <%= f.input :photo, as: :file, input_html: {id: "avatar-input"} %>
-            <%= f.submit %>
-          <% end %>
-        </div>
+      <div class="hidden-form" style="
+        position: absolute;
+        top: -10000px;
+      ">
+        <%= simple_form_for(@user) do |f| %>
+          <%= f.input :photo, as: :file, input_html: {id: "avatar-input"} %>
+          <%= f.submit %>
+        <% end %>
+      </div>
         <!-- user photo comes here! -->
-        <% if (current_user == @user && !@user.photo.attached? ) %>
-        <!-- Upload photo -->
-        <%=image_tag("avatar.jpg", height: 300, width: 300, crop: :fill, :class => "avatar-large border", id: "avatar-upload") %>
-        <% elsif @user.photo.attached? %>
-          <%= render 'filter', user: @user %>
+      <% if (current_user == @user && !@user.photo.attached? ) %>
+      <!-- Upload photo -->
+      <%=image_tag("avatar.jpg", height: 300, width: 300, crop: :fill, :class => "avatar-large border", id: "avatar-upload") %>
+      <% elsif @user.photo.attached? %>
+        <%= render 'filter', user: @user %>
           <% if @user.avatar_filter %>
             <img id="avatar-upload" src="http://res.cloudinary.com/dwl902xa4/image/upload<%= @user.avatar_filter %>/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
           <% else %>
@@ -27,61 +25,59 @@
         <% if current_user == @user %>
           <button type="button" class="btn btn-transparent mt-n4 absolute" data-toggle="modal" data-target="#imageFilterModal">Filter</button>
         <% end %>
+      <% end %>
+    </div>
 
+    <div class="user-info">
+      <div class="user-name">
+        <h5><%= @user.username.capitalize %></h5>
+      </div>
+      <!-- User bio -->
+      <div class="bio">
+        <% if current_user != @user %>
+          <p class="bio"><%= @user.bio %></p>
         <% end %>
       </div>
-      <!-- Username -->
-      <div class="user d-flex flex-column justify-content-center">
-        <div class="user-name ml-2">
-          <h3><%= @user.username.capitalize %></h3>
+      <div class="user-numbers d-flex">
+        <div class="followers mr-2">
+          <%= link_to followers_path(@user) do %>
+            <p class=""><small><%= pluralize(@user.number_of_followers, 'follower') %></small></p>
+          <% end %>
         </div>
-        <!-- Followers -->
-        <div class="user-numbers d-flex">
-            <div class="followers mr-2">
-              <%= link_to followers_path(@user) do %>
-                <p class=""><small><i class="fas fa-heart align middle"></i><%= pluralize(@user.number_of_followers, 'follower') %></small></p>
-              <% end %>
-            </div>
-            <div class="count-votes ml-2">
-              <p><small id="upvoting"><%= pluralize(@upvotes, 'uptip') %></small></p>
-            </div>
+        <div class="count-votes ml-2">
+          <p><small id="upvoting"><%= pluralize(@upvotes, 'uptip') %></small></p>
         </div>
       </div>
     </div>
-    <!-- User bio -->
-    <div class="bio">
-      <% if current_user != @user %>
-        <h5 class="text-center"><%= @user.bio %></h5>
-      <% end %>
-    </div>
-    <!-- Change bio OR Follow another user -->
-    <div class="wrapper">
-      <% if (current_user == @user) %>
-        <div class="bio-form" style="
-          border: none;
-          text-align: center;
+  </div>
+  <div class="wrapper">
+    <% if (current_user == @user) %>
+      <div class="bio-form d-flex" style="
+        border: none;
+        text-align: center;
         ">
-          <%= simple_form_for(@user) do |f| %>
-          <%= f.input :bio, :input_html =>{:class => "input no-bs-validation"}, label: false %>
-          <%= f.submit "Update Bio"%>
-        </div>
-      <% end %>
+        <%= simple_form_for(@user) do |f| %>
+          <div class="d-flex">
+            <%= f.input :bio, :input_html =>{:class => "input no-bs-validation"}, label: false %>
+            <%= f.submit "Update Bio"%>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <% if user_signed_in? && current_user.following?(@user) %>
+        <%= link_to follow_path(@user), method: :delete do %>
+          <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Unfollow</small></p>
+        <% end %>
       <% else %>
-        <% if user_signed_in? && current_user.following?(@user) %>
-          <%= link_to follow_path(@user), method: :delete do %>
-            <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Unfollow <%= @user.username%></small></p>
-          <% end %>
-          <% else %>
-          <%= link_to follow_path(@user), method: :post do %>
-            <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Follow <%= @user.username%></small></p>
-          <% end %>
+        <%= link_to follow_path(@user), method: :post do %>
+          <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Follow</small></p>
         <% end %>
       <% end %>
-    </div>
+    <% end %>
   </div>
   <% if current_user == @user %>
     <div class="lists">
-      <ul class="nav nav-pills p-2 mt-4 align middle" style="justify-content: center;" id="pills-tab" role="tablist">
+      <ul class="nav nav-pills mt-4 align middle" id="pills-tab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">My Lists</a>
         </li>
@@ -99,7 +95,13 @@
       </div>
     </div>
   <% else %>
-    <h4 id="list-header"><%= @user.username %>'s tip lists</h4>
-    <%= render 'lists/list', lists: @lists %>
+    <% unless @lists.exists? %>
+      <p class="user-list"><%= @user.username.capitalize%> doesn't have a list yet.</p>
+    <% end %>
   <% end %>
 </div>
+
+
+
+
+
