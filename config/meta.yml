@@ -1,0 +1,4 @@
+meta_product_name: "TravelTip"
+meta_title: "TravelTip - In friends we trust"
+meta_description: "The app that connects people with places through friends' recommendations"
+meta_image: "pretty.jpg" # should exist in `app/assets/images/`
