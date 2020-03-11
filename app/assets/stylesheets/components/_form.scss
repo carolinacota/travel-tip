@@ -18,9 +18,10 @@
   }
   label {
     float: left;
-    width: 100px;
-    text-align: right;
+    // width: 100px;
+    // text-align: right;
     margin: 2px 10px;
+    color: black;
   }
 }
 
@@ -109,4 +110,13 @@ label.collection_check_boxes {
   height: 38px;
 }
 
+.form-group{
+  margin-bottom: 15px !important;
+}
 
+// #log-in-form{
+//   color: black;
+//   width: 0;
+//   text-align: none;
+//   margin: 0;
+// }
