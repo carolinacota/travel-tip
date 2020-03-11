@@ -40,6 +40,7 @@
   opacity: 0.7;
 }
 
+
 .btn-pink-cityshow {
   margin: 4px 8px;
   color: white;
@@ -53,4 +54,17 @@
   font-weight: 500;
   margin-right: 8px;
   // opacity: 0.7;
+}
+
+.btn-transparent {
+  color: $pink;
+  padding: 1px 9px;
+  border: 1px solid $pink;
+  border-radius: 3px;
+  background: transparent;
+  transition: background 0.3s ease;
+  font-size: 0.75em;
+  font-family: 'Roboto';
+  font-weight: 500;
+  opacity: 0.7;
 }
