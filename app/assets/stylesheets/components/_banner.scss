@@ -1,11 +1,10 @@
 // CITY SHOW PAGE BANNER!!! //
 .city-banner {
   height: 25vh;
-  width: 100vw;
   overflow: hidden;
-  background-size: cover;
-  background: white;
   background-position: center center;
   display: flex;
+  -webkit-box-pack: end;
   justify-content: flex-end;
+  background-size: cover;
 }
