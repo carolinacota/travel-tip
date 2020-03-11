@@ -1,0 +1,47 @@
+<!-- Filter Modal -->
+<div id="imageFilterModal" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="position: fixed; bottom: 0px; left: 16%; top: 8%; margin: 0px" >
+    <!-- Modal content-->
+    <div class="modal-content" style="border-radius: 10px; width: 100%;">
+      <div class="d-flex justify-content-center">
+        <div class="avatar-filter" data-filter="/e_art:al_dente" data-avatar-key="<%= @user.photo.key %>">
+          <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:al_dente/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
+          <figcaption class="fig-caption text-center" style="background-color: white;">Al Dente</figcaption>
+        </div>
+        <div class="avatar-filter" data-filter="/e_art:athena" data-avatar-key="<%= @user.photo.key %>">
+          <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:athena/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
+          <figcaption class="fig-caption text-center">Athena</figcaption>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="avatar-filter" data-filter="/e_art:audrey" data-avatar-key="<%= @user.photo.key %>">
+          <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:audrey/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
+          <figcaption class="fig-caption text-center">Audrey</figcaption>
+        </div>
+        <div class="avatar-filter" data-filter="/e_art:fes" data-avatar-key="<%= @user.photo.key %>">
+          <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:fes/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
+          <figcaption class="fig-caption text-center">Fes</figcaption>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="avatar-filter" data-filter="/e_art:incognito" data-avatar-key="<%= @user.photo.key %>">
+          <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:incognito/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
+          <figcaption class="fig-caption text-center">Incognito</figcaption>
+        </div>
+        <div class="avatar-filter" data-filter="/e_art:red_rock" data-avatar-key="<%= @user.photo.key %>">
+          <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:red_rock/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
+          <figcaption class="fig-caption text-center">Red Rock</figcaption>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="avatar-filter" data-filter="" data-avatar-key="<%= @user.photo.key %>">
+          <img src="http://res.cloudinary.com/dwl902xa4/image/upload/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
+          <figcaption class="fig-caption_no-filter text-center">No Filter</figcaption>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-current-location" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

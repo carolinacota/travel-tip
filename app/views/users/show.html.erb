@@ -1,124 +1,87 @@
 <div class="container">
-  <div class="d-flex text-center align-middle" style="justify-content: center;">
-    <div class="text-center align-middle">
-      <div class="hidden-form" style="
-        position: absolute;
-        top: -10000px;
-      ">
-        <%= simple_form_for(@user) do |f| %>
-          <%= f.input :photo, as: :file, input_html: {id: "avatar-input"} %>
-          <%= f.submit %>
+  <!-- Username, photo upload, followers, uptips -->
+  <div class="d-flex flex-column">
+    <div class="d-flex">
+      <div class="user-photo">
+        <!-- upload picture form -->
+        <div class="hidden-form" style="
+          position: absolute;
+          top: -10000px;
+        ">
+          <%= simple_form_for(@user) do |f| %>
+            <%= f.input :photo, as: :file, input_html: {id: "avatar-input"} %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+        <!-- user photo comes here! -->
+        <% if (current_user == @user && !@user.photo.attached? ) %>
+        <!-- Upload photo -->
+        <%=image_tag("avatar.jpg", height: 300, width: 300, crop: :fill, :class => "avatar-large border", id: "avatar-upload") %>
+        <% elsif @user.photo.attached? %>
+          <%= render 'filter', user: @user %>
+          <% if @user.avatar_filter %>
+            <img id="avatar-upload" src="http://res.cloudinary.com/dwl902xa4/image/upload<%= @user.avatar_filter %>/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
+          <% else %>
+            <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :fill, :class => "avatar-large", id: "avatar-upload" %>
+          <% end %>
+        <% if current_user == @user %>
+          <button type="button" class="btn btn-transparent mt-n4 absolute" data-toggle="modal" data-target="#imageFilterModal">Filter</button>
+        <% end %>
+
         <% end %>
       </div>
-      <div class="col">
-        <% if (current_user == @user && !@user.photo.attached? ) %>
-          <p>Upload your pic!<i id="avatar-upload" class="fas fa-upload"></i></p>
-        <% elsif @user.photo.attached? %>
-          <div d-flex flex-column>
-            <div>
-              <% if @user.avatar_filter %>
-                <img id="avatar-upload" src="http://res.cloudinary.com/dwl902xa4/image/upload<%= @user.avatar_filter %>/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
-              <% else %>
-                <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :fill, :class => "avatar-large", id: "avatar-upload" %>
+      <!-- Username -->
+      <div class="user d-flex flex-column justify-content-center">
+        <div class="user-name ml-2">
+          <h3><%= @user.username.capitalize %></h3>
+        </div>
+        <!-- Followers -->
+        <div class="user-numbers d-flex">
+            <div class="followers mr-2">
+              <%= link_to followers_path(@user) do %>
+                <p class=""><small><i class="fas fa-heart align middle"></i><%= pluralize(@user.number_of_followers, 'follower') %></small></p>
               <% end %>
             </div>
-            <% if current_user == @user %>
-              <button type="button" class="btn btn-pink-tags mt-n4 ml-1" data-toggle="modal" data-target="#imageFilterModal">Filter</button>
-            <% end %>
-          </div>
-          <!-- Filter Modal -->
-          <div id="imageFilterModal" class="modal fade" role="dialog">
-            <div class="modal-dialog" style="position: fixed; bottom: 0px; left: 16%; top: 8%; margin: 0px" >
-              <!-- Modal content-->
-              <div class="modal-content" style="border-radius: 10px; width: 100%;">
-                <div class="d-flex justify-content-center">
-                  <div class="avatar-filter" data-filter="/e_art:al_dente" data-avatar-key="<%= @user.photo.key %>">
-                    <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:al_dente/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
-                    <figcaption class="fig-caption" style="background-color: white;">Al Dente</figcaption>
-                  </div>
-                  <div class="avatar-filter" data-filter="/e_art:athena" data-avatar-key="<%= @user.photo.key %>">
-                    <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:athena/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
-                    <figcaption class="fig-caption">Athena</figcaption>
-                  </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                  <div class="avatar-filter" data-filter="/e_art:audrey" data-avatar-key="<%= @user.photo.key %>">
-                    <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:audrey/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
-                    <figcaption class="fig-caption">Audrey</figcaption>
-                  </div>
-                  <div class="avatar-filter" data-filter="/e_art:fes" data-avatar-key="<%= @user.photo.key %>">
-                    <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:fes/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
-                    <figcaption class="fig-caption">Fes</figcaption>
-                  </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                  <div class="avatar-filter" data-filter="/e_art:incognito" data-avatar-key="<%= @user.photo.key %>">
-                    <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:incognito/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
-                    <figcaption class="fig-caption">Incognito</figcaption>
-                  </div>
-                  <div class="avatar-filter" data-filter="/e_art:red_rock" data-avatar-key="<%= @user.photo.key %>">
-                    <img src="http://res.cloudinary.com/dwl902xa4/image/upload/e_art:red_rock/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
-                    <figcaption class="fig-caption">Red Rock</figcaption>
-                  </div>
-                </div>
-                <div class="justify-content-center">
-                  <div class="avatar-filter" data-filter="" data-avatar-key="<%= @user.photo.key %>">
-                    <img src="http://res.cloudinary.com/dwl902xa4/image/upload/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
-                    <figcaption class="fig-caption_no-filter">No Filter</figcaption>
-                  </div>
-                </div>
-                <div class="modal-footer mt-2">
-                  <button type="button" class="btn btn-current-location" data-dismiss="modal">Close</button>
-                </div>
-              </div>
+            <div class="count-votes ml-2">
+              <p><small id="upvoting"><%= pluralize(@upvotes, 'uptip') %></small></p>
             </div>
-          </div>
-        <% end %>
-        <h1><%= @user.username %></h1>
-        <% if (current_user == @user) %>
+        </div>
+      </div>
+    </div>
+    <!-- User bio -->
+    <div class="bio">
+      <% if current_user != @user %>
+        <h5 class="text-center"><%= @user.bio %></h5>
+      <% end %>
+    </div>
+    <!-- Change bio OR Follow another user -->
+    <div class="wrapper">
+      <% if (current_user == @user) %>
         <div class="bio-form" style="
           border: none;
+          text-align: center;
         ">
-
           <%= simple_form_for(@user) do |f| %>
-          <%= f.input :bio, :input_html =>{:class => "input no-bs-validation"}, label: false  %>
+          <%= f.input :bio, :input_html =>{:class => "input no-bs-validation"}, label: false %>
           <%= f.submit "Update Bio"%>
         </div>
+      <% end %>
+      <% else %>
+        <% if user_signed_in? && current_user.following?(@user) %>
+          <%= link_to follow_path(@user), method: :delete do %>
+            <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Unfollow <%= @user.username%></small></p>
+          <% end %>
+          <% else %>
+          <%= link_to follow_path(@user), method: :post do %>
+            <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Follow <%= @user.username%></small></p>
+          <% end %>
         <% end %>
-        <% else %>
-          <h4>"<%= @user.bio %>"</h4>
-        <% end %>
-      </div>
-      <div class="d-flex flex-column mt-4">
-        <div class="wrap d-flex justify-content-center">
-          <div class="followers mr-2">
-            <%= link_to followers_path(@user) do %>
-              <p class=""><small><i class="fas fa-heart align middle p-1"></i><%= pluralize(@user.number_of_followers, 'follower') %></small></p>
-            <% end %>
-          </div>
-          <div class="count-votes ml-2">
-            <p><small id="upvoting"><%= pluralize(@upvotes, 'uptip') %></small></p>
-          </div>
-        </div>
-        <div class="vote">
-          <% if current_user != @user %>
-              <% if user_signed_in? && current_user.following?(@user) %>
-                <%= link_to follow_path(@user), method: :delete do %>
-                  <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Unfollow <%= @user.username%></small></p>
-                <% end %>
-                <% else %>
-                <%= link_to follow_path(@user), method: :post do %>
-                  <p class="align-middle pink"><small><i class="fas fa-users align middle p-1"></i> Follow <%= @user.username%></small></p>
-                <% end %>
-              <% end %>
-            <% end %>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
   <% if current_user == @user %>
     <div class="lists">
-      <ul class="nav nav-pills p-2 align middle" style="justify-content: center;" id="pills-tab" role="tablist">
+      <ul class="nav nav-pills p-2 mt-4 align middle" style="justify-content: center;" id="pills-tab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active"  data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">My Lists</a>
         </li>
@@ -140,4 +103,3 @@
     <%= render 'lists/list', lists: @lists %>
   <% end %>
 </div>
-
