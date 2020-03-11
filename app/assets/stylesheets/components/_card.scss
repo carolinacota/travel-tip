@@ -270,7 +270,6 @@
   overflow: hidden;
   // box-shadow: 0 0 2px rgba(0,0,0,0.2);
   margin: 10px;
-
   a {
     color: black;
   }
@@ -288,6 +287,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 200px;
+    padding: 0;
+    margin: 0;
     font-size: 13px;
     font-weight: 300;
   }

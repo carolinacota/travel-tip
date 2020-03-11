@@ -11,12 +11,12 @@
 }
 
 .followee-infos{
-  padding: 10px;
-  width: 65%;
-  height: 100%;
-  display: flex;
+  // padding: 10px;
+  // width: 65%;
+  // height: 100%;
+  // display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
 .followee-link {
@@ -32,6 +32,15 @@
   object-fit: cover;
 }
 
+#friends-avatar{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
 
-
+.folowee-lists{
+  // font-size: 11px;
+  margin: inherit;
+  padding: initial
+}
 

@@ -15,17 +15,19 @@
         <div class="followee-card d-flex">
           <div class="followee-photo">
             <% if follower.photo.attached? %>
-              <%= cl_image_tag follower.photo.key, :class => "avatar-medium m-auto", id: "avatar-upload" %>
+              <%= cl_image_tag follower.photo.key, :class => "avatar-medium m-auto", id: "friends-avatar" %>
             <% else %>
               <div class="placeholder-avatar avatar-medium"></div>
             <% end %>
           </div>
-          <div class="followee-infos d-flex justify-content-center" style="margin: 0; padding: 0;">
+
+          <div class="followee-infos d-flex justify-content-center">
             <h5><%= follower.username.capitalize %></h5>
             <div class="followee-lists" style="font-size: 12px; font-weight: 300;">
               <p>
                 <%= follower.not_wishlists.count != 0 ? pluralize(follower.not_wishlists.count, "list")  : "" %>
-                :<% follower.not_wishlists[0..3].each do |list| %>
+
+                : <% follower.not_wishlists[0..3].each do |list| %>
                   <%= list.city.name %>
                 <% end %>
                 <% if follower.not_wishlists.count > 0  %>
