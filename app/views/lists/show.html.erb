@@ -9,7 +9,7 @@
       <p style="color: $pink; opacity: 0.6"><small>Go on and add some tips!</small></p>
     <% else %>
         <%if @user == current_user %>
-          <h3>My Tips</h3>
+          <h3>My Lists</h3>
         <%else %>
           <h3><%= @list.user.username %>'s Tips</h3>
         <% end %>
