@@ -1,5 +1,9 @@
+.followers{
+  margin-top: 15px;
+}
+
 .followee-photo{
-  width: 25%;
+  width: 23%;
   height: 100%;
   text-align: center;
   display: flex;
@@ -21,7 +25,13 @@
 }
 
 
-.followers{
-  margin-top: 15px;
+#friends-avatar{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
 }
+
+
+
 
