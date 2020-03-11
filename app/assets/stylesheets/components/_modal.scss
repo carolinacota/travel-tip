@@ -8,12 +8,12 @@
 
 .modal-img {
  cursor: pointer;
- position: absolute;
+ position: sticky;
  width: 80px;
  height: 80px;
  border-radius: 50%;
  background-size: 100% auto;
- margin: 20px;
+ margin: 8px;
  right: 4%;
  top: 16vh;
  z-index: 2;
