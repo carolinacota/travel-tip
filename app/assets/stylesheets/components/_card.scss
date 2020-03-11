@@ -265,11 +265,11 @@
 }
 
 .followee-card {
-  height: 75px;
-  display: flex;
+  height: 72px;
+  // display: flex;
   overflow: hidden;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-
+  // box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  margin: 10px;
   a {
     color: black;
   }
