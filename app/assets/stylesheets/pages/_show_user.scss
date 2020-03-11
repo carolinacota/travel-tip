@@ -15,9 +15,13 @@ div.boolean, .simple_form input[type='submit'] {
   font-size: 15px;
 }
 
-.input {
+.input-hidden {
   border: none;
   background-color: transparent;
+}
+
+.input {
+  border-color: red;
 }
 
 .form-group {
@@ -49,3 +53,9 @@ div.boolean, .simple_form input[type='submit'] {
 .count-votes p {
   margin-bottom: 0 !important;
 }
+
+// input#user_bio {
+//   border-color: $pink;
+//   border: $pink;
+//   background-color: $light-grey;
+// }
