@@ -38,8 +38,8 @@
           <p class="bio"><%= @user.bio %></p>
         <% end %>
       </div>
-      <div class="user-numbers d-flex">
-        <div class="followers mr-2">
+      <div class="user-numbers d-flex align-items-center">
+        <div class="followers mr-2 mt-0">
           <%= link_to followers_path(@user) do %>
             <p class=""><small><%= pluralize(@user.number_of_followers, 'follower') %></small></p>
           <% end %>

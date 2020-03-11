@@ -9,31 +9,32 @@
           <h2 class="pink"><%= @user.username %></h2>
     </div>
   </div>
-  <br>
-  <% @followers.each do |follower| %>
-    <%= link_to profile_path(follower), class:"followee-link" do %>
-      <div class="followee-card d-flex">
-        <div class="followee-photo">
-          <% if follower.photo.attached? %>
-            <%= cl_image_tag follower.photo.key, height: 300, width: 300, crop: :fill, :class => "avatar-medium m-auto", id: "avatar-upload" %>
-          <% else %>
-            <div class="placeholder-avatar avatar-medium"></div>
-          <% end %>
-        </div>
-        <div class="followee-infos">
-          <h5><%= follower.username.capitalize %></h5>
-          <div class="followee-lists">
-            <%= follower.not_wishlists.count != 0 ? pluralize(follower.not_wishlists.count, "list")  : "" %>
-            <br>
-            <% follower.not_wishlists[0..3].each do |list| %>
-              <%= list.city.name %>
-            <% end %>
-            <% if follower.not_wishlists.count > 0  %>
-              ...
+  <div class="followers">
+    <% @followers.each do |follower| %>
+      <%= link_to profile_path(follower), class:"followee-link" do %>
+        <div class="followee-card d-flex">
+          <div class="followee-photo">
+            <% if follower.photo.attached? %>
+              <%= cl_image_tag follower.photo.key, :class => "avatar-medium m-auto", id: "avatar-upload" %>
+            <% else %>
+              <div class="placeholder-avatar avatar-medium"></div>
             <% end %>
           </div>
+          <div class="followee-infos">
+            <h5><%= follower.username.capitalize %></h5>
+            <div class="followee-lists">
+              <%= follower.not_wishlists.count != 0 ? pluralize(follower.not_wishlists.count, "list")  : "" %>
+              <br>
+              <% follower.not_wishlists[0..3].each do |list| %>
+                <%= list.city.name %>
+              <% end %>
+              <% if follower.not_wishlists.count > 0  %>
+                ...
+              <% end %>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
