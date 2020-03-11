@@ -27,6 +27,7 @@ div.boolean, .simple_form input[type='submit'] {
 
 .form-group {
   padding: 0;
+  margin-bottom: 5px;
 }
 
 .input-centered{
@@ -58,6 +59,8 @@ div.boolean, .simple_form input[type='submit'] {
 .wrapper {
   margin: 0 auto;
   margin-top: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 .user-photo {

@@ -85,8 +85,8 @@
 
 .modal-content {
   width: 85%;
-  margin-left: 27px;
-  margin-top: 20px;
+  // margin-left: 27px;
+  margin-top: -35px;
 }
 
 .col-form-label {
@@ -98,4 +98,5 @@
 .simple_form input[type='submit'] {
   background-color: $pink !important;
   opacity: 1 !important;
+  margin: 0 auto;
 }
