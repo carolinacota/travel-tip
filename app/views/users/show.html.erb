@@ -15,18 +15,17 @@
         </div>
         <!-- user photo comes here! -->
         <% if (current_user == @user && !@user.photo.attached? ) %>
-          <p>Upload your pic!<i id="avatar-upload" class="fas fa-upload"></i></p>
+        <!-- Upload photo -->
+        <%=image_tag("avatar.jpg", height: 300, width: 300, crop: :fill, :class => "avatar-large border", id: "avatar-upload") %>
         <% elsif @user.photo.attached? %>
-          <%#= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :fill, :class => "avatar-large", id: "avatar-upload" %>
           <%= render 'filter', user: @user %>
-
           <% if @user.avatar_filter %>
             <img id="avatar-upload" src="http://res.cloudinary.com/dwl902xa4/image/upload<%= @user.avatar_filter %>/c_scale,w_300/c_fill,h_300,w_300/<%= @user.photo.key %>", class="avatar-large">
           <% else %>
             <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :fill, :class => "avatar-large", id: "avatar-upload" %>
           <% end %>
         <% if current_user == @user %>
-          <button type="button" class="btn btn-pink-tags mt-n4 absolute" data-toggle="modal" data-target="#imageFilterModal">Filter</button>
+          <button type="button" class="btn btn-transparent mt-n4 absolute" data-toggle="modal" data-target="#imageFilterModal">Filter</button>
         <% end %>
 
         <% end %>
