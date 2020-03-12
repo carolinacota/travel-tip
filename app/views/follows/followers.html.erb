@@ -4,7 +4,7 @@
           <% if @user.photo.attached? %>
             <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :fill, :class => "avatar-large", id: "avatar-upload" %>
           <% else %>
-          <div class="placeholder-avatar avatar-large"></div>
+          <%=image_tag("avatar.jpg", height: 300, width: 300, crop: :fill, :class => "avatar-large mt-4", id: "avatar-upload") %>
           <% end %>
           <h2 class="pink"><%= @user.username %></h2>
     </div>
@@ -17,9 +17,7 @@
             <% if follower.photo.attached? %>
               <%= cl_image_tag follower.photo.key, :class => "avatar-medium m-auto", id: "friends-avatar" %>
             <% else %>
-
                 <%=image_tag("avatar.jpg", height: 300, width: 300, crop: :fill, :class => "avatar-medium", id: "avatar-upload") %>
-
             <% end %>
           </div>
 
