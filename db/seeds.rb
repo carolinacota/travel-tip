@@ -175,12 +175,12 @@ vega = Place.create(name: 'Vega', address: 'Calle de la Luna, 9, Madrid, Spain',
 madrid8 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/0a/ba/a5/c7/local.jpg")
 vega.photo.attach(io: madrid8, filename: "madrid8.jpg", content_type: "image/jpg")
 
-puntoMX = Place.create(name: 'Punto MX', address: 'Calle del Gral. Pardiñas, 40, 28001 Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['brunch', "cocktails"])
+puntoMX = Place.create(name: 'Punto MX', address: 'Calle del General Pardiñas, 40, 28001 Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['brunch', "cocktails"])
 madrid9 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/76/b9/e5/tuetano-a-la-brasa.jpg")
 puntoMX.photo.attach(io: madrid9, filename: "madrid9.jpg", content_type: "image/jpg")
 
 prado = Place.create(name: 'Prado Museum', address: 'Calle de Ruiz de Alarcón, 23, 28014 Madrid, pain', city_id: madrid.id, category_id: sight.id, sight_list: ["museum", "touristy"])
-madrid10 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/af/ca/4f/caption.jpg")
+madrid10 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/18/0e/96/e6/photo0jpg.jpg")
 prado.photo.attach(io: madrid10, filename: "madrid10.jpg", content_type: "image/jpg")
 
 inclan = Place.create(name: 'Inclan Brutal Bar', address: 'Calle de Arlabán, 7, 28014 Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['cocktails', "wine"])
