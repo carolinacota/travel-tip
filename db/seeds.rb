@@ -25,6 +25,7 @@ user2.save!
 user3 = User.create(username: "thirduser", email: 'thirdemail@gmail.com', bio: "I am the third amazing user", password: '123456')
 user4 = User.create(username: "fourthuser", email: 'fourthemail@gmail.com', password: '123456')
 
+
 puts "Creating cities"
 madrid = City.create(name: 'madrid')
 tokyo = City.create(name: 'tokyo')
@@ -51,3 +52,40 @@ place5.photo.attach(io: file4, filename: "img4.jpg", content_type: "image/jpg")
 puts "Creating places for Madrid"
 place1 = Place.create(name: 'Bola', address: 'Calle de la Bola, Madrid, Spain', city_id: madrid.id, category_id: food.id, average_rating: 4)
 place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid, Spain", city_id: madrid.id, category_id: sight.id, average_rating: 5)
+
+
+
+
+
+
+# Carol
+
+carol = User.create(username: "carol", email: 'carolinareycota@gmail.com', password: '123456')
+
+# City
+salvador = City.create(name: 'salvador')
+salvadorPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/07/33/52/07/farol-da-barra.jpg")
+salvador.photo.attach(io: salvadorPhoto, filename: "salvadorphoto.jpg", content_type: "image/jpg")
+
+# Places
+elevadorLacerda = Place.create(name: 'Elevador Lacerda', address: 'Praça Tomé de Souza, Centro, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, sight_list: ["touristy", "historical"])
+salvador1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/17/43/a8/91/elevador-lacerda.jpg")
+elevadorLacerda.photo.attach(io: salvador1, filename: "salvador1.jpg", content_type: "image/jpg")
+
+
+
+
+# FOODS = ['brunch', 'burgers', 'veggie' 'cocktails', 'wine', 'local', 'happy hour'].freeze
+# SIGHTS = ['museum', 'historical', 'touristy', 'parks', 'sunset'].freeze
+# ENTERTAINMENTS = ['family-friendly', 'music', 'dancing', 'theatre', 'sports', 'rooftops'].freeze
+
+
+
+
+
+
+
+
+
+
+
