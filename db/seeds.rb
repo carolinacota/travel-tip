@@ -109,7 +109,7 @@ salvador7 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/10/7a/09/b
 casaVidal.photo.attach(io: salvador7, filename: "salvador7.jpg", content_type: "image/jpg")
 
 # City
-saopaulo = City.create(name: 'são paulo')
+saopaulo = City.create(name: 'sãopaulo')
 saoPauloPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/0d/57/74/94/photo2jpg.jpg")
 saopaulo.photo.attach(io: saoPauloPhoto, filename: "saopaulophoto.jpg", content_type: "image/jpg")
 
