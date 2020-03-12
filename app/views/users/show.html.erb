@@ -79,28 +79,7 @@
     <div class="lists">
       <ul class="nav nav-pills mt-4 align middle" id="pills-tab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">My Tips</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">WishLists</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-         <%= render 'lists/list', lists: @lists %>
-        </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-          <%= render 'lists/list', lists: @wishlists %>
-        </div>
-      </div>
-    </div>
-  <% else %>
-   <%= render 'lists/list', lists: @lists %>
-    <% unless @lists.exists? %>
-      <p class="user-list"><%= @user.username.capitalize%> doesn't have a list yet.</p>
-    <% end %>
-  <% end %>
-</div>
+          <a c
 
 
 
