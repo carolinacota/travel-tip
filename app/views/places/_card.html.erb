@@ -1,5 +1,5 @@
 <div class="list-card m-2">
-  <img src="https://source.unsplash.com/random/?food" alt="" class="image">
+  <img src="<%= url_for(place.get_user_tips(@list.user).first.photos.first) %>" alt="" class="image">
   <div class="place-card-text  ml-3">
     <div class="d-flex flex-column justify-content-between" style="height: 100%">
       <div class="place-name">

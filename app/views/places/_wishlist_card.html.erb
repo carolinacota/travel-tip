@@ -1,5 +1,5 @@
 <div class="tip-card m-2">
-  <img src="https://source.unsplash.com/random/?food" alt="" class="image">
+  <img src="<%= url_for(place.photo) %>" alt="" class="image">
   <div class="place-card-text ml-3">
     <h4><%= link_to place.name, city_place_path(place.city, place) %></h4>
     <div class="d-flex flex-column">
