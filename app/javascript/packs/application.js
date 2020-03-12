@@ -18,7 +18,6 @@ import { initSwiper} from "../plugins/swiper"
 initSwiper();
 autocompleteSearch();
 getCurrentPosition();
-avatarUpload();
 foursquareSearch();
 avatarUpload()
 initAvatarFilters();
