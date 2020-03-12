@@ -1,9 +1,9 @@
 class Place < ApplicationRecord
   after_validation :set_slug, on: %i[create update]
 
-  FOODS = ['brunch', 'burgers', 'views', 'cocktails', 'wine', 'steak'].freeze
-  SIGHTS = ['museum', 'culture', 'historical', 'touristy', 'parks'].freeze
-  ENTERTAINMENTS = ['family-friendly', 'music', 'dancing', 'theatre', 'movies', 'sports'].freeze
+  FOODS = ['brunch', 'burgers', 'veggie' 'cocktails', 'wine', 'local', 'happy hour'].freeze
+  SIGHTS = ['museum', 'historical', 'touristy', 'parks', 'sunset'].freeze
+  ENTERTAINMENTS = ['family-friendly', 'music', 'dancing', 'theatre', 'sports', 'rooftops'].freeze
 
   belongs_to :city
   belongs_to :category
