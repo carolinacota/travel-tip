@@ -51,7 +51,7 @@ entertainment = Category.create(name: 'Entertainment')
 
 
 
-# Carol
+# User
 
 carol = User.create(username: "carol", email: 'carolinareycota@gmail.com', password: '123456')
 vir = User.create(username: "virgi", email: 'virgarmar@hotmail.com', password: '123456')
@@ -135,11 +135,6 @@ saopaulo4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/17/ef/a5/7
 terracoItalia.photo.attach(io: saopaulo4, filename: "saopaulo4.jpg", content_type: "image/jpg")
 
 
-# FOODS = ['brunch', 'burgers', 'veggie' 'cocktails', 'wine', 'local', 'happy hour'].freeze
-# SIGHTS = ['museum', 'historical', 'touristy', 'parks', 'sunset'].freeze
-# ENTERTAINMENTS = ['family-friendly', 'music', 'dancing', 'theatre', 'sports', 'rooftops'].freeze
-
-
 #virginia
 
 # City
@@ -155,7 +150,6 @@ temploDebod.photo.attach(io: madrid1, filename: "madrid1.jpg", content_type: "im
 retiro = Place.create(name: 'Retiro Park', address: 'Plaza de la Independencia, 7, 28001 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["touristy", "parks"])
 madrid2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/0c/53/53/2c/img-20160729-205021-largejpg.jpg")
 retiro.photo.attach(io: madrid2, filename: "madrid2.jpg", content_type: "image/jpg")
-
 
 royalPalace = Place.create(name: 'Royal Palace', address: 'Calle de Bailén, s/n, 28071 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["historical", "touristy"])
 madrid3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/af/ca/4f/caption.jpg")
@@ -180,7 +174,6 @@ mercadoMiguel.photo.attach(io: madrid7, filename: "madrid7.jpg", content_type: "
 vega = Place.create(name: 'Vega', address: 'Calle de la Luna, 9, Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['veggie', "wine"])
 madrid8 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/0a/ba/a5/c7/local.jpg")
 vega.photo.attach(io: madrid8, filename: "madrid8.jpg", content_type: "image/jpg")
-
 
 puntoMX = Place.create(name: 'Punto MX', address: 'Calle del General Pardiñas, 40, 28001 Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['brunch', "cocktails"])
 madrid9 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/76/b9/e5/tuetano-a-la-brasa.jpg")
