@@ -207,7 +207,7 @@ antiBurger = Place.create(name: 'AntiBurger', address: 'Calle 71, Panamá, Panam
 panama1 = URI.open("https://i.imgur.com/WWGFX2I.jpg")
 antiBurger.photo.attach(io: panama1,  filename: "panama1.jpg", content_type: "image/jpg")
 
-tantalo = Place.create(name: 'Tantalo', address: 'San Felipe, Panama City, Panama', city_id: panama.id, category_id: entertainment.id, food_list: "happy hour", entertainment_list: ["rooftop"])
+tantalo = Place.create(name: 'Tantalo', address: 'San Felipe, Panama City, Panama', city_id: panama.id, category_id: entertainment.id, food_list: "happy hour", entertainment_list: ["rooftops"])
 panama2 = URI.open("https://i.imgur.com/ol0wzby.jpg")
 tantalo.photo.attach(io: panama2,  filename: "panama2.jpg", content_type: "image/jpg")
 
