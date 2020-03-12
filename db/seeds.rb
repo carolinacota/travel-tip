@@ -32,7 +32,7 @@ tokyo = City.create(name: 'tokyo')
 
 
 puts "Creating lists"
-list1 = List.create(user: user1, city: madrid, is_wishlist: false)
+# list1 = List.create(user: user1, city: madrid, is_wishlist: false)
 
 puts "Creating Categories"
 food = Category.create(name: 'Food & Drinks')
@@ -40,8 +40,8 @@ sight = Category.create(name: 'Sights & attractions')
 entertainment = Category.create(name: 'Entertainment')
 
 puts "Creating places for Madrid"
-place1 = Place.create(name: 'Bola', address: 'Calle de la Bola, Madrid, Spain', city_id: madrid.id, category_id: food.id, average_rating: 4)
-place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid, Spain", city_id: madrid.id, category_id: sight.id, average_rating: 5)
+# place1 = Place.create(name: 'Bola', address: 'Calle de la Bola, Madrid, Spain', city_id: madrid.id, category_id: food.id, average_rating: 4)
+# place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid, Spain", city_id: madrid.id, category_id: sight.id, average_rating: 5)
 
 
 
@@ -51,6 +51,7 @@ place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid,
 # Carol
 
 carol = User.create(username: "carol", email: 'carolinareycota@gmail.com', password: '123456')
+vir = User.create(username: "virgi", email: 'virgarmar@hotmail.com', password: '123456')
 
 # # City
 # london = City.create(name: 'london')
@@ -136,12 +137,60 @@ terracoItalia.photo.attach(io: saopaulo4, filename: "saopaulo4.jpg", content_typ
 # ENTERTAINMENTS = ['family-friendly', 'music', 'dancing', 'theatre', 'sports', 'rooftops'].freeze
 
 
+#virginia
 
+# City
+madrid = City.create(name: 'madrid')
+madridPhoto = URI.open("https://images.unsplash.com/photo-1543783207-ec64e4d95325?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60")
+madrid.photo.attach(io: madridPhoto, filename: "madridPhoto.jpg", content_type: "image/jpg")
 
+# Places
+temploDebod = Place.create(name: 'Templo de Debod', address: 'Calle de Ferraz, 1, 28008 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["sunset", "historical"])
+madrid1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/af/ca/4f/caption.jpg")
+temploDebod.photo.attach(io: madrid1, filename: "madrid1.jpg", content_type: "image/jpg")
 
+retiro = Place.create(name: 'Retiro Park', address: 'Plaza de la Independencia, 7, 28001 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["touristy", "parks"])
+madrid2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/0c/53/53/2c/img-20160729-205021-largejpg.jpg")
+retiro.photo.attach(io: madrid2, filename: "madrid2.jpg", content_type: "image/jpg")
 
+royalPalace = Place.create(name: 'Royal Palace', address: 'Calle de Bailén, s/n, 28071 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["historical", "touristy"])
+madrid3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/af/ca/4f/caption.jpg")
+royalPalace.photo.attach(io: madrid3, filename: "madrid3.jpg", content_type: "image/jpg")
 
+theHat = Place.create(name: 'The Hat', address: 'Calle Imperial, 9, 28012 Madrid, Spain', city_id: madrid.id, category_id: entertainment.id, entertainment_list: ["rooftops", "dancing"])
+madrid4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/09/d2/e2/img-20171019-131309587.jpg")
+theHat.photo.attach(io: madrid4, filename: "madrid4.jpg", content_type: "image/jpg")
 
+chueca = Place.create(name: 'Chueca District', address: 'Chueca, Madrid, Spain', city_id: madrid.id, category_id: entertainment.id, entertainment_list: ["music", "dancing"])
+madrid5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/42/0a/d5/i-ll-pick-my-guitar-and.jpg")
+chueca.photo.attach(io: madrid5, filename: "madrid5.jpg", content_type: "image/jpg")
 
+rastro = Place.create(name: 'El Rastro', address: 'Calle de la Ribera de Curtidores, 28005 Madrid, Spain', city_id: madrid.id, category_id: sight.id, entertainment_list: 'family-friendly', sight_list: "touristy")
+madrid6 = URI.open("https://db82kmzzne7f2.cloudfront.net/ghost-bloges/2018/03/paseo.jpg")
+rastro.photo.attach(io: madrid6, filename: "madrid6.jpg", content_type: "image/jpg")
+
+mercadoMiguel = Place.create(name: 'S. Miguel Market', address: 'Plaza de San Miguel, S/N, 28005 Madrid', city_id: madrid.id, category_id: food.id, food_list: ['best value', "local"])
+madrid7 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/0a/dc/14/59/20160409-123912-largejpg.jpg")
+mercadoMiguel.photo.attach(io: madrid7, filename: "madrid7.jpg", content_type: "image/jpg")
+
+vega = Place.create(name: 'Vega', address: 'Calle de la Luna, 9, Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['veggie', "wine"])
+madrid8 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmtFbkl08T6T_tL8iMOOqkCaiK1jJrGG3ldpoFk4l1FdsKs3_r")
+vega.photo.attach(io: madrid8, filename: "madrid8.jpg", content_type: "image/jpg")
+
+puntoMX = Place.create(name: 'Punto MX', address: 'Calle del Gral. Pardiñas, 40, 28001 Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['brunch', "cocktails"])
+madrid9 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7izmhsJ1w57-Q7DhWgNzW5_DJXgImPTvHsPlYVtEGggYI95HE")
+puntoMX.photo.attach(io: madrid9, filename: "madrid9.jpg", content_type: "image/jpg")
+
+prado = Place.create(name: 'Prado Museum', address: 'Calle de Ruiz de Alarcón, 23, 28014 Madrid, pain', city_id: madrid.id, category_id: sight.id, sight_list: ["museum", "touristy"])
+madrid10 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/af/ca/4f/caption.jpg")
+prado.photo.attach(io: madrid10, filename: "madrid10.jpg", content_type: "image/jpg")
+
+inclan = Place.create(name: 'Inclan Brutal Bar', address: 'Calle de Arlabán, 7, 28014 Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['cocktails', "wine"])
+madrid11 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/13/91/8d/45/barra.jpg")
+inclan.photo.attach(io: madrid11, filename: "madrid11.jpg", content_type: "image/jpg")
+
+mago = Place.create(name: 'Mago Pop', address: 'Calle Gran Vía, 54, 28013 Madrid, Spain', city_id: madrid.id, category_id: entertainment.id, entertainment_list: ['theatre', "music"])
+madrid12 = URI.open("https://media-cdn.tripadvisor.com/media/photo-f/11/f7/bc/9f/el-mago-pop-nada-es-imposible.jpg")
+mago.photo.attach(io: madrid12, filename: "madrid12.jpg", content_type: "image/jpg")
 
 
