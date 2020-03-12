@@ -64,7 +64,7 @@ carol = User.create(username: "carol", email: 'carolinareycota@gmail.com', passw
 
 # City
 salvador = City.create(name: 'salvador')
-salvadorPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/07/33/52/07/farol-da-barra.jpg")
+salvadorPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/1a/db/0d/c5/img-20191220-wa0020-largejpg.jpg")
 salvador.photo.attach(io: salvadorPhoto, filename: "salvadorphoto.jpg", content_type: "image/jpg")
 
 # Places
@@ -72,6 +72,9 @@ elevadorLacerda = Place.create(name: 'Elevador Lacerda', address: 'Praça Tomé 
 salvador1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/17/43/a8/91/elevador-lacerda.jpg")
 elevadorLacerda.photo.attach(io: salvador1, filename: "salvador1.jpg", content_type: "image/jpg")
 
+pelourinho = Place.create(name: 'Pelourinho', address: 'Largo Terreiro de Jesus, Pelourinho, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, sight_list: ["touristy", "historical"])
+salvador2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/3a/dd/23/photo1jpg.jpg")
+pelourinho.photo.attach(io: salvador2, filename: "salvador2.jpg", content_type: "image/jpg")
 
 
 
