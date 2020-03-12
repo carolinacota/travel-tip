@@ -2,7 +2,7 @@
 <% lists.each do |list| %>
   <%= link_to city_list_path(list.city, list) do %>
     <div class="d-flex city-card mt-2">
-      <img src="https://source.unsplash.com/random/?<%=list.city.name%>" class="image-list">
+      <img src="<%= url_for(list.city.photo) %>" class="image-list">
       <div class="list-card-info">
         <h4 class="mt-2 ml-2 list-name"><%= list.city.name.capitalize %></h4>
         <div class="flex row ml-2 list-card-icons">

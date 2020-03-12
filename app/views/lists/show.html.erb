@@ -1,4 +1,4 @@
-<div class='city-banner' style="background-image: url(https://source.unsplash.com/random/?<%= @city.name%>)">
+<div class='city-banner' style="background-image: url(<%= url_for(@city.photo) %>)">
   <img src="https://image.freepik.com/free-vector/street-map-with-pin-routes_23-2147622544.jpg" alt="" class="modal-img" data-toggle="modal" data-target="#myModal">
 </div>
 <div class="container">

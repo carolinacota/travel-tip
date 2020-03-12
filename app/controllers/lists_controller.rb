@@ -17,6 +17,6 @@ class ListsController < ApplicationController
   end
 
   def set_city
-    @city = City.find_by(name: params[:city_name])
+    @city = City.find_by(slug: params[:city_name])
   end
 end
