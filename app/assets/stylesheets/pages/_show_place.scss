@@ -22,7 +22,8 @@
 
 
 .add-tip{
-  margin-top: 10px;
+  // margin-top: 10px;
+  margin-top: 0 !important;
   text-decoration: none;
 
   a{
@@ -32,6 +33,15 @@
       color: #ff7fbb;
     }
   }
+}
+
+.fa-award{
+  font-size: 18px;
+}
+
+.tips-place{
+  font-size: 18px;
+  color: $grey;
 }
 
 .add-tip-small {
@@ -70,3 +80,17 @@
   padding-bottom: 0;
 }
 
+.fa-sort-up{
+  color: $pink;
+  font-size: 20px;
+}
+
+.fa-sort-down{
+  color: $pink;
+  font-size: 20px;
+}
+
+.tip-score{
+  font-size: 18px;
+  color: $grey;
+}

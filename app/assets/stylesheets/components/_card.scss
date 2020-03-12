@@ -191,7 +191,7 @@
 // TIP CARDS //
 
 .tip-card {
-  height: 21vh;
+  height: 15vh;
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -214,6 +214,7 @@
     margin: 0;
   }
 }
+
 #tip-carousel{
  .carousel-control-next,
   .carousel-control-prev {
@@ -233,15 +234,15 @@
 }
 
 .tip-content {
-  height: 50%;
+  // height: 50%;
   overflow: hidden;
   margin-bottom: 0;
-  h3{
+  h5{
     margin-bottom: 0px;
     // white-space: nowrap;
-    // text-overflow: ellipsis;
+    text-overflow: ellipsis;
     max-width: 400px;
-    font-weight: 700;
+    // font-weight: 700;
   }
 }
 
@@ -250,7 +251,7 @@
 }
 
 .content {
-  margin: 5px;
+  // margin: 5px;
   width: 70%;
   overflow: hidden;
 
@@ -259,11 +260,12 @@
   }
 }
 
-.fa-star {
-  font-size: 12px;
-  color: $grey;
-}
+.user-tip{
+  a{
+    color: $grey !important;
+  }
 
+}
 .followee-card {
   height: 72px;
   // display: flex;
@@ -299,3 +301,28 @@
   text-decoration: none;
 }
 
+// whishlist
+.list-card{
+  height: 17vh;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  .carousel-container{
+    width: 40%;
+    .tip-photo{
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+
+  p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    color: $grey;
+    font-size: 25px;
+    margin: 0;
+  }
+}
