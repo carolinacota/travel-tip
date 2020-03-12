@@ -118,7 +118,7 @@ purana = Place.create(name: 'Purana', address: '840 Rua Cônego Eugênio Leite, 
 saopaulo1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-p/16/57/d1/d0/photo0jpg.jpg")
 purana.photo.attach(io: saopaulo1, filename: "saopaulo1.jpg", content_type: "image/jpg")
 
-paulista = Place.create(name: 'Paulista Avenue', address: '1578 Avenida Paulista, Bela Vista, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: sight.id, , sight_list: ["touristy", "historical"])
+paulista = Place.create(name: 'Paulista Avenue', address: '1578 Avenida Paulista, Bela Vista, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: sight.id, sight_list: ["touristy", "historical"])
 saopaulo2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-o/17/e5/c4/85/20190406-081040-largejpg.jpg")
 paulista.photo.attach(io: saopaulo2, filename: "saopaulo2.jpg", content_type: "image/jpg")
 
@@ -126,7 +126,7 @@ ibirapuera = Place.create(name: 'Ibirapuera Park', address: 'Avenida Pedro Álva
 saopaulo3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/1a/22/70/87/ovo-de-pascoa-ibirapuera.jpg")
 ibirapuera.photo.attach(io: saopaulo3, filename: "saopaulo3.jpg", content_type: "image/jpg")
 
-terracoItalia = Place.create(name: 'Terraço Itália', address: 'Avenida Pedro Álvares Cabral, Vila Mariana, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: sight.id, entertainment_list: ['family-friendly', 'rooftops'])
+terracoItalia = Place.create(name: 'Terraço Itália', address: 'Avenida Pedro Álvares Cabral, Vila Mariana, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: sight.id, entertainment_list: ["family-friendly", "rooftops"])
 saopaulo4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-o/03/b4/df/b3/piano-bar.jpg")
 terracoItalia.photo.attach(io: saopaulo4, filename: "saopaulo4.jpg", content_type: "image/jpg")
 
