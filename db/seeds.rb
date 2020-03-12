@@ -27,21 +27,21 @@ user4 = User.create(username: "fourthuser", email: 'fourthemail@gmail.com', pass
 
 
 puts "Creating cities"
-madrid = City.create(name: 'madrid')
-tokyo = City.create(name: 'tokyo')
+# madrid = City.create(name: 'madrid')
+# tokyo = City.create(name: 'tokyo')
 
 
-puts "Creating lists"
-list1 = List.create(user: user1, city: madrid, is_wishlist: false)
+# puts "Creating lists"
+# list1 = List.create(user: user1, city: madrid, is_wishlist: false)
 
 puts "Creating Categories"
 food = Category.create(name: 'Food & Drinks')
 sight = Category.create(name: 'Sights & attractions')
 entertainment = Category.create(name: 'Entertainment')
 
-puts "Creating places for Madrid"
-place1 = Place.create(name: 'Bola', address: 'Calle de la Bola, Madrid, Spain', city_id: madrid.id, category_id: food.id, average_rating: 4)
-place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid, Spain", city_id: madrid.id, category_id: sight.id, average_rating: 5)
+# puts "Creating places for Madrid"
+# place1 = Place.create(name: 'Bola', address: 'Calle de la Bola, Madrid, Spain', city_id: madrid.id, category_id: food.id, average_rating: 4)
+# place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid, Spain", city_id: madrid.id, category_id: sight.id, average_rating: 5)
 
 
 
@@ -136,7 +136,41 @@ terracoItalia.photo.attach(io: saopaulo4, filename: "saopaulo4.jpg", content_typ
 # ENTERTAINMENTS = ['family-friendly', 'music', 'dancing', 'theatre', 'sports', 'rooftops'].freeze
 
 
+#virginia
 
+# City
+madrid = City.create(name: 'madrid')
+madridPhoto = URI.open("https://images.unsplash.com/photo-1543783207-ec64e4d95325?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60")
+madrid.photo.attach(io: madridPhoto, filename: "madridPhoto.jpg", content_type: "image/jpg")
+
+# Places
+temploDebod = Place.create(name: 'Templo de Debod', address: 'Calle de Ferraz, 1, 28008 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["sunset", "historical"])
+madrid1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/af/ca/4f/caption.jpg")
+temploDebod.photo.attach(io: madrid1, filename: "madrid1.jpg", content_type: "image/jpg")
+
+retiro = Place.create(name: 'Retiro Park', address: 'Plaza de la Independencia, 7, 28001 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["touristy", "parks"])
+madrid2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/0c/53/53/2c/img-20160729-205021-largejpg.jpg")
+retiro.photo.attach(io: madrid2, filename: "madrid2.jpg", content_type: "image/jpg")
+
+# misturaContorno = Place.create(name: 'Mistura Contorno', address: '334, Ladeira do Gabriel, Dois de Julho, madrid, Bahia, Brasil', city_id: madrid.id, category_id: sight.id, food_list: ["local", "veggie"])
+# madrid3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/c4/75/67/photo0jpg.jpg")
+# misturaContorno.photo.attach(io: madrid3, filename: "madrid3.jpg", content_type: "image/jpg")
+
+# kimukeka = Place.create(name: 'Kimukeka', address: '345, Avenida Octavio Mangabeira Pituba, madrid, Bahia, Brasil', city_id: madrid.id, category_id: sight.id, food_list: ["local", "happy hour"])
+# madrid4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/09/d2/e2/img-20171019-131309587.jpg")
+# kimukeka.photo.attach(io: madrid4, filename: "madrid4.jpg", content_type: "image/jpg")
+
+# origem = Place.create(name: 'Origem', address: '74, Alameda das Algarobas, Pituba, madrid, Bahia, Brasil', city_id: madrid.id, category_id: sight.id, food_list: ["local", "cocktails"])
+# madrid5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-p/1a/5a/e2/3d/photo0jpg.jpg")
+# origem.photo.attach(io: madrid5, filename: "madrid5.jpg", content_type: "image/jpg")
+
+# portoDaBarra = Place.create(name: 'Porto da Barra Beach', address: '3783 Avenida Sete de Setembro, Barra, madrid, Bahia, Brasil', city_id: madrid.id, category_id: sight.id, entertainment_list: 'family-friendly', sight_list: "sunset")
+# madrid6 = URI.open("https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/e7/8b/db/praia-do-porto-da-barra.jpg")
+# portoDaBarra.photo.attach(io: madrid6, filename: "madrid6.jpg", content_type: "image/jpg")
+
+# casaVidal = Place.create(name: 'Casa Vidal', address: '417 Alameda das Cajazeiras, Caminho das Árvores, madrid, Bahia, Brasil', city_id: madrid.id, category_id: sight.id, entertainment_list: 'family-friendly', food_list: "local")
+# madrid7 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/10/7a/09/ba/carpaccio-de-polvo-foto.jpg")
+# casaVidal.photo.attach(io: madrid7, filename: "madrid7.jpg", content_type: "image/jpg")
 
 
 
