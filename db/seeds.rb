@@ -167,7 +167,7 @@ rastro = Place.create(name: 'El Rastro', address: 'Calle de Carlos Arniches, 14,
 madrid6 = URI.open("https://db82kmzzne7f2.cloudfront.net/ghost-bloges/2018/03/paseo.jpg")
 rastro.photo.attach(io: madrid6, filename: "madrid6.jpg", content_type: "image/jpg")
 
-mercadoMiguel = Place.create(name: 'S. Miguel Market', address: 'Plaza de San Miguel, S/N, 28005 Madrid', city_id: madrid.id, category_id: food.id, food_list: ['best value', "local"])
+mercadoMiguel = Place.create(name: 'S. Miguel Market', address: 'Calle de Bordadores, 3, 28013 Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['best value', "local"])
 madrid7 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/0a/dc/14/59/20160409-123912-largejpg.jpg")
 mercadoMiguel.photo.attach(io: madrid7, filename: "madrid7.jpg", content_type: "image/jpg")
 
