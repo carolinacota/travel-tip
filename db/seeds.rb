@@ -173,6 +173,70 @@ retiro.photo.attach(io: madrid2, filename: "madrid2.jpg", content_type: "image/j
 # casaVidal.photo.attach(io: madrid7, filename: "madrid7.jpg", content_type: "image/jpg")
 
 
+#Isa
+isa = User.create(username: "isa", email: 'ilopezg31@gmail.com', password: '123456')
+
+# City
+panama = City.create(name: 'panama')
+panamaPhoto = URI.open("https://images.unsplash.com/photo-1540610410855-b4c8877b761c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2406&q=80")
+panama.photo.attach(io: panamaPhoto, filename: "panamaohoto.jpg", content_type: "image/jpg")
+
+#Places
+antiBurger = Place.create(name: 'AntiBurger', address: 'Calle 71, Panamá, Panamá', city_id: panama.id, category_id: food.id, food_list: ["veggie", "burgers"])
+panama1 = URI.open("https://i.imgur.com/WWGFX2I.jpg")
+antiBurger.photo.attach(io: panama1,  filename: "panama1.jpg", content_type: "image/jpg")
+
+tantalo = Place.create(name: 'Tantalo', address: 'San Felipe, Panama City, Panama', city_id: panama.id, category_id: entertainment.id, food_list: "happy hour", entertainment_list: ["rooftop"])
+panama2 = URI.open("https://i.imgur.com/ol0wzby.jpg")
+tantalo.photo.attach(io: panama2,  filename: "panama2.jpg", content_type: "image/jpg")
+
+fonda = Place.create(name: 'Fonda Lo Que Hay', address: 'Calle 12, Panamá, Panamá', city_id: panama.id, category_id: food.id, food_list: "local")
+panama3 = place3pic = URI.open("https://i.imgur.com/tgoZznR.jpg")
+fonda.photo.attach(io: panama3,  filename: "panama3.jpg", content_type: "image/jpg")
+
+azahar = Place.create(name: 'Azahar', address: 'AVENIDA BALBOA, PANAMA, PANAMA', city_id: panama.id, category_id: food.id, food_list: "cocktails", sight_list: "sunset")
+panama4 = URI.open("https://i.imgur.com/CiDd0oI.jpg")
+azahar.photo.attach(io: panama4,  filename: "panama4.jpg", content_type: "image/jpg")
+
+brutto = Place.create(name: 'Brutto', address: 'Calle 74 Este, Panamá, Panama', city_id: panama.id, category_id: food.id, food_list: "happy hour")
+panama5 = URI.open("https://i.imgur.com/cVNB9WC.jpg")
+brutto.photo.attach(io: panama5,  filename: "panama5.jpg", content_type: "image/jpg")
+
+amano = Place.create(name: 'Amano', address: 'Calle 70 Este, Panamá, Panama', city_id: panama.id, category_id: food.id, food_list: ["wine", "cocktails"])
+panama6 = URI.open("https://i.imgur.com/pRQAN4R.jpg")
+amano.photo.attach(io: panama6,  filename: "panama6.jpg", content_type: "image/jpg")
+
+santana = Place.create(name: 'Santana', address: 'Casco Viejo, Panama City, Panama', city_id: panama.id, category_id: entertainment.id, entertainment_list: ["music", "dancing"])
+panama7 = URI.open("https://i.imgur.com/bj1r8RN.jpg")
+santana.photo.attach(io: panama7,  filename: "panama7.jpg", content_type: "image/jpg")
+
+canal = Place.create(name: 'Panama Canal', address: 'Miraflores Locks, Panama City, Panama', city_id: panama.id, category_id: sight.id, sight_list: ["touristy", "museum"])
+panama8 = URI.open("https://i.imgur.com/lW5LYLI.jpg")
+canal.photo.attach(io: panama8,  filename: "panama8.jpg", content_type: "image/jpg")
+
+panamaViejo = Place.create(name: 'Panama Viejo', address: 'Vía Cincuentenario, Panamá, Panama', city_id: panama.id, category_id: sight.id, sight_list: ["touristy", "historical"])
+panama9 = URI.open("https://i.imgur.com/SbLIGN1.jpg")
+panamaViejo.photo.attach(io: panama9,  filename: "panama9.jpg", content_type: "image/jpg")
+
+biomuseo = Place.create(name: 'Biomuseo', address: 'Amador Causeway 136, Panama City, Panama', city_id: panama.id, category_id: sight.id, sight_list: "museum")
+panama10 = URI.open("https://i.imgur.com/7Ry4c1q.jpg")
+biomuseo.photo.attach(io: panama10,  filename: "panama10.jpg", content_type: "image/jpg")
+
+cascoViejo = Place.create(name: 'Casco Viejo', address: 'San Felipe, Panama City, Panama', city_id: panama.id, category_id: sight.id, sight_list: ["touristy", "historical"])
+panama11 = URI.open("https://i.imgur.com/3YDENbN.jpg")
+cascoViejo.photo.attach(io: panama11,  filename: "panama11.jpg", content_type: "image/jpg")
+
+casaBruja = Place.create(name: 'Casa Bruja', address: 'Costa del Este, Panama City, Panama', city_id: panama.id, category_id: food.id, food_list: "happy hour", entertainment_list: "music")
+panama12 = URI.open("https://i.imgur.com/fRi7r2A.jpg")
+casaBruja.photo.attach(io: panama12,  filename: "panama12.jpg", content_type: "image/jpg")
+
+karma = Place.create(name: 'Karma', address: 'Calle 56 Este, Panamá, Panama', city_id: panama.id, category_id: food.id, food_list: "veggie")
+panama13 = URI.open("https://i.imgur.com/RFMvq6I.jpg")
+karma.photo.attach(io: panama13,  filename: "panama13.jpg", content_type: "image/jpg")
+
+salvaje = Place.create(name: 'Salvaje', address: 'Avenida Eloy Alfaro, Panama City, Panama', city_id: panama.id, category_id: food.id, food_list: "happy hour", entertainment_list: "music")
+panama14 = URI.open("https://i.imgur.com/c759hCT.jpg")
+salvaje.photo.attach(io: panama14,  filename: "panama14.jpg", content_type: "image/jpg")
 
 
 
