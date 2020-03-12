@@ -50,7 +50,7 @@ carol = User.create(username: "carol", email: 'carolinareycota@gmail.com', passw
 
 # City
 london = City.create(name: 'london')
-londonPhoto = URI.open("https://i.imgur.com/noBJk9l.jpg")
+londonPhoto = URI.open("https://www.londonpass.com/siteimg/newpages/238389676_TowerBridge1.jpg")
 london.photo.attach(io: londonPhoto, filename: "londonphoto.jpg", content_type: "image/jpg")
 
 # Places
@@ -68,7 +68,7 @@ museum.photo.attach(io: london3, filename: "london3.jpg", content_type: "image/j
 
 angleseaArms = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terrace, South Kensington, London SW7 3QG, United Kingdom", city_id: london.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
 london4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/10/de/cf/1e/the-anglesea-arms.jpg")
-museum.photo.attach(io: london4, filename: "london4.jpg", content_type: "image/jpg")
+angleseaArms.photo.attach(io: london4, filename: "london4.jpg", content_type: "image/jpg")
 
 kabuki = Place.create(name: "Kabuki Wellington", address: "Calle de Velázquez, 6, 28001 Madrid, Spain", city_id: madrid.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
 london5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/f5/d8/32/photo1jpg.jpg")
