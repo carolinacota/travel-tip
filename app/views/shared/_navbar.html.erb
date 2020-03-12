@@ -30,10 +30,10 @@
         <li id="navbar-link">
           <%= link_to "Profile", profile_path(current_user), class: "nav-link" %>
         </li>
-         <li class="nav-item">
+         <li class="navbar-link">
           <%= link_to "Followers", followers_path(current_user.username), class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="navbar-link">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
 <!--         <li class="nav-item dropdown">
@@ -48,7 +48,7 @@
         <li id="navbar-link">
           <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="navbar-link">
           <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
