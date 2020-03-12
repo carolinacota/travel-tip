@@ -70,11 +70,6 @@ angleseaArms = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terr
 london4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/10/de/cf/1e/the-anglesea-arms.jpg")
 angleseaArms.photo.attach(io: london4, filename: "london4.jpg", content_type: "image/jpg")
 
-kabuki = Place.create(name: "Kabuki Wellington", address: "Calle de Velázquez, 6, 28001 Madrid, Spain", city_id: madrid.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
-london5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/f5/d8/32/photo1jpg.jpg")
-kabuki.photo.attach(io: london5, filename: "london5.jpg", content_type: "image/jpg")
-
-
 # City
 salvador = City.create(name: 'salvador')
 salvadorPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/1a/db/0d/c5/img-20191220-wa0020-largejpg.jpg")
