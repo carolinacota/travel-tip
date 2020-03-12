@@ -4,7 +4,7 @@ before_action :set_place, only: [:show]
   # has_many :tips
 
 def show
-  @city = City.find_by name: params[:city_name]
+  @city = City.find_by slug: params[:city_name]
   @list = List.where(user: current_user, city: @city).first
   @list = List.new if @list.nil?
   @tips = @place.tips.order(upvote: :desc)
