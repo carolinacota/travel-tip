@@ -29,8 +29,7 @@ user4 = User.create(username: "fourthuser", email: 'fourthemail@gmail.com', pass
 puts "Creating cities"
 madrid = City.create(name: 'madrid')
 tokyo = City.create(name: 'tokyo')
-london = City.create(name: 'london')
-london.photo.attach(io: file3, filename: "img3.jpg", content_type: "image/jpg")
+
 
 puts "Creating lists"
 list1 = List.create(user: user1, city: madrid, is_wishlist: false)
@@ -39,15 +38,6 @@ puts "Creating Categories"
 food = Category.create(name: 'Food & Drinks')
 sight = Category.create(name: 'Sights & attractions')
 entertainment = Category.create(name: 'Entertainment')
-
-
-puts "Creating places for London"
-place1 = Place.create(name: 'Casa Cruz', address: '123A Clarendon Rd, Notting Hill, London W11 4JG, United Kingdom', city_id: london.id, category_id: food.id, average_rating: 5, food_list: ["brunch", "burgers"])
-place2 = Place.create(name: 'London Eye', address: "London Eye, Westminster Bridge Road, London SE1 7PB, United Kingdom", city_id: london.id, category_id: sight.id, average_rating: 3, food_list: "views", sight_list: "touristy")
-place3 = Place.create(name: 'Natural History Museum', address: "Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom", city_id: london.id, category_id: entertainment.id, average_rating: 4, food_list: "culture", sight_list: "museum")
-place4 = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terrace, South Kensington, London SW7 3QG, United Kingdom", city_id: london.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
-place5 = Place.create(name: "Kabuki Wellington", address: "Calle de Velázquez, 6, 28001 Madrid, Spain", city_id: madrid.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
-place5.photo.attach(io: file4, filename: "img4.jpg", content_type: "image/jpg")
 
 puts "Creating places for Madrid"
 place1 = Place.create(name: 'Bola', address: 'Calle de la Bola, Madrid, Spain', city_id: madrid.id, category_id: food.id, average_rating: 4)
@@ -61,6 +51,28 @@ place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid,
 # Carol
 
 carol = User.create(username: "carol", email: 'carolinareycota@gmail.com', password: '123456')
+
+# # City
+# london = City.create(name: 'london')
+# londonPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/1a/db/0d/c5/img-20191220-wa0020-largejpg.jpg")
+# london.photo.attach(io: londonPhoto, filename: "londonphoto.jpg", content_type: "image/jpg")
+
+# # Places
+# casaCruz = Place.create(name: 'Casa Cruz', address: '123A Clarendon Rd, Notting Hill, London W11 4JG, United Kingdom', city_id: london.id, category_id: food.id, average_rating: 5, food_list: ["brunch", "burgers"])
+# london1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/1a/db/0d/c5/img-20191220-wa0020-largejpg.jpg")
+# casaCruz.photo.attach(io: london1, filename: "img4.jpg", content_type: "image/jpg")
+
+
+# londonEye = Place.create(name: 'London Eye', address: "London Eye, Westminster Bridge Road, London SE1 7PB, United Kingdom", city_id: london.id, category_id: sight.id, average_rating: 3, food_list: "views", sight_list: "touristy")
+
+# museum = Place.create(name: 'Natural History Museum', address: "Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom", city_id: london.id, category_id: entertainment.id, average_rating: 4, food_list: "culture", sight_list: "museum")
+
+# angleseaArms = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terrace, South Kensington, London SW7 3QG, United Kingdom", city_id: london.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
+
+# kabuki = Place.create(name: "Kabuki Wellington", address: "Calle de Velázquez, 6, 28001 Madrid, Spain", city_id: madrid.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
+
+
+
 
 # City
 salvador = City.create(name: 'salvador')
