@@ -44,17 +44,13 @@ place1 = Place.create(name: 'Bola', address: 'Calle de la Bola, Madrid, Spain', 
 place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid, Spain", city_id: madrid.id, category_id: sight.id, average_rating: 5)
 
 
-
-
-
-
 # Carol
 
 carol = User.create(username: "carol", email: 'carolinareycota@gmail.com', password: '123456')
 
 # City
 london = City.create(name: 'london')
-londonPhoto = URI.open("https://unsplash.com/photos/Q6UehpkBSnQ")
+londonPhoto = URI.open("https://i.imgur.com/noBJk9l.jpg")
 london.photo.attach(io: londonPhoto, filename: "londonphoto.jpg", content_type: "image/jpg")
 
 # Places
@@ -63,11 +59,11 @@ london1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/14/ec/77/62/
 casaCruz.photo.attach(io: london1, filename: "london1.jpg", content_type: "image/jpg")
 
 londonEye = Place.create(name: 'London Eye', address: "London Eye, Westminster Bridge Road, London SE1 7PB, United Kingdom", city_id: london.id, category_id: sight.id, average_rating: 3, food_list: "views", sight_list: "touristy")
-london2 = URI.open("https://unsplash.com/photos/rn-0OotfzFA")
+london2 = URI.open("https://i.imgur.com/dJGRRyI.jpg")
 londonEye.photo.attach(io: london2, filename: "london2.jpg", content_type: "image/jpg")
 
 museum = Place.create(name: 'Natural History Museum', address: "Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom", city_id: london.id, category_id: entertainment.id, average_rating: 4, food_list: "culture", sight_list: "museum")
-london3 = URI.open("https://unsplash.com/photos/CFi7_hCXecU")
+london3 = URI.open("https://i.imgur.com/jTRQTVU.jpg")
 museum.photo.attach(io: london3, filename: "london3.jpg", content_type: "image/jpg")
 
 angleseaArms = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terrace, South Kensington, London SW7 3QG, United Kingdom", city_id: london.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
