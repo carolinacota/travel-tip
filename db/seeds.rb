@@ -62,18 +62,21 @@ casaCruz = Place.create(name: 'Casa Cruz', address: '123A Clarendon Rd, Notting 
 london1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/14/ec/77/62/casa-cruz.jpg")
 casaCruz.photo.attach(io: london1, filename: "london1.jpg", content_type: "image/jpg")
 
-
 londonEye = Place.create(name: 'London Eye', address: "London Eye, Westminster Bridge Road, London SE1 7PB, United Kingdom", city_id: london.id, category_id: sight.id, average_rating: 3, food_list: "views", sight_list: "touristy")
-london2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/14/ec/77/62/casa-cruz.jpg")
+london2 = URI.open("https://unsplash.com/photos/rn-0OotfzFA")
 londonEye.photo.attach(io: london2, filename: "london2.jpg", content_type: "image/jpg")
 
-# museum = Place.create(name: 'Natural History Museum', address: "Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom", city_id: london.id, category_id: entertainment.id, average_rating: 4, food_list: "culture", sight_list: "museum")
+museum = Place.create(name: 'Natural History Museum', address: "Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom", city_id: london.id, category_id: entertainment.id, average_rating: 4, food_list: "culture", sight_list: "museum")
+london3 = URI.open("https://unsplash.com/photos/CFi7_hCXecU")
+museum.photo.attach(io: london3, filename: "london3.jpg", content_type: "image/jpg")
 
-# angleseaArms = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terrace, South Kensington, London SW7 3QG, United Kingdom", city_id: london.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
+angleseaArms = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terrace, South Kensington, London SW7 3QG, United Kingdom", city_id: london.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
+london4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/10/de/cf/1e/the-anglesea-arms.jpg")
+museum.photo.attach(io: london4, filename: "london4.jpg", content_type: "image/jpg")
 
-# kabuki = Place.create(name: "Kabuki Wellington", address: "Calle de Velázquez, 6, 28001 Madrid, Spain", city_id: madrid.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
-
-
+kabuki = Place.create(name: "Kabuki Wellington", address: "Calle de Velázquez, 6, 28001 Madrid, Spain", city_id: madrid.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
+london5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/f5/d8/32/photo1jpg.jpg")
+kabuki.photo.attach(io: london5, filename: "london5.jpg", content_type: "image/jpg")
 
 
 # City
@@ -90,16 +93,16 @@ pelourinho = Place.create(name: 'Pelourinho', address: 'Largo Terreiro de Jesus,
 salvador2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/3a/dd/23/photo1jpg.jpg")
 pelourinho.photo.attach(io: salvador2, filename: "salvador2.jpg", content_type: "image/jpg")
 
-misturaContorno = Place.create(name: 'Mistura Contorno', address: '334, Ladeira do Gabriel, Dois de Julho, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "veggie"])
-salvador3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/c4/75/67/photo0jpg.jpg")
+misturaContorno = Place.create(name: 'Mistura Contorno', address: '334 Ladeira do Gabriel, Dois de Julho, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "veggie"])
+salvador3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/12/11/ae/ae/photo0jpg.jpg")
 misturaContorno.photo.attach(io: salvador3, filename: "salvador3.jpg", content_type: "image/jpg")
 
-kimukeka = Place.create(name: 'Kimukeka', address: '345, Avenida Octavio Mangabeira Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "happy hour"])
+kimukeka = Place.create(name: 'Kimukeka', address: '345 Avenida Octavio Mangabeira Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "happy hour"])
 salvador4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/09/d2/e2/img-20171019-131309587.jpg")
 kimukeka.photo.attach(io: salvador4, filename: "salvador4.jpg", content_type: "image/jpg")
 
-origem = Place.create(name: 'Origem', address: '74, Alameda das Algarobas, Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "cocktails"])
-salvador5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-p/1a/5a/e2/3d/photo0jpg.jpg")
+origem = Place.create(name: 'Origem', address: '1 Alameda dos Flamboyants, Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "cocktails"])
+salvador5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-p/19/9f/53/b4/restaurante-origem.jpg")
 origem.photo.attach(io: salvador5, filename: "salvador5.jpg", content_type: "image/jpg")
 
 portoDaBarra = Place.create(name: 'Porto da Barra Beach', address: '3783 Avenida Sete de Setembro, Barra, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, entertainment_list: 'family-friendly', sight_list: "sunset")
@@ -111,7 +114,7 @@ salvador7 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/10/7a/09/b
 casaVidal.photo.attach(io: salvador7, filename: "salvador7.jpg", content_type: "image/jpg")
 
 # City
-saopaulo = City.create(name: 'sãopaulo')
+saopaulo = City.create(name: 'são paulo')
 saoPauloPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/0d/57/74/94/photo2jpg.jpg")
 saopaulo.photo.attach(io: saoPauloPhoto, filename: "saopaulophoto.jpg", content_type: "image/jpg")
 
@@ -129,7 +132,7 @@ saopaulo3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/1a/22/70/8
 ibirapuera.photo.attach(io: saopaulo3, filename: "saopaulo3.jpg", content_type: "image/jpg")
 
 terracoItalia = Place.create(name: 'Terraço Itália', address: 'Avenida Pedro Álvares Cabral, Vila Mariana, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: sight.id, entertainment_list: ["family-friendly", "rooftops"])
-saopaulo4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/17/14/29/1d/img-20190405-144958-229.jpg")
+saopaulo4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/17/ef/a5/71/file-com-risoto.jpg")
 terracoItalia.photo.attach(io: saopaulo4, filename: "saopaulo4.jpg", content_type: "image/jpg")
 
 
