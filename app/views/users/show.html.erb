@@ -95,6 +95,7 @@
       </div>
     </div>
   <% else %>
+   <%= render 'lists/list', lists: @lists %>
     <% unless @lists.exists? %>
       <p class="user-list"><%= @user.username.capitalize%> doesn't have a list yet.</p>
     <% end %>

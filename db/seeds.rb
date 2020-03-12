@@ -27,11 +27,15 @@ user4 = User.create(username: "fourthuser", email: 'fourthemail@gmail.com', pass
 
 
 puts "Creating cities"
-madrid = City.create(name: 'madrid')
-tokyo = City.create(name: 'tokyo')
+# madrid = City.create(name: 'madrid')
+# tokyo = City.create(name: 'tokyo')
+
 
 
 puts "Creating lists"
+
+# puts "Creating lists"
+
 # list1 = List.create(user: user1, city: madrid, is_wishlist: false)
 
 puts "Creating Categories"
@@ -39,11 +43,10 @@ food = Category.create(name: 'Food & Drinks')
 sight = Category.create(name: 'Sights & attractions')
 entertainment = Category.create(name: 'Entertainment')
 
-puts "Creating places for Madrid"
+
+
 # place1 = Place.create(name: 'Bola', address: 'Calle de la Bola, Madrid, Spain', city_id: madrid.id, category_id: food.id, average_rating: 4)
 # place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid, Spain", city_id: madrid.id, category_id: sight.id, average_rating: 5)
-
-
 
 
 
@@ -53,27 +56,27 @@ puts "Creating places for Madrid"
 carol = User.create(username: "carol", email: 'carolinareycota@gmail.com', password: '123456')
 vir = User.create(username: "virgi", email: 'virgarmar@hotmail.com', password: '123456')
 
-# # City
-# london = City.create(name: 'london')
-# londonPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/1a/db/0d/c5/img-20191220-wa0020-largejpg.jpg")
-# london.photo.attach(io: londonPhoto, filename: "londonphoto.jpg", content_type: "image/jpg")
+# City
+london = City.create(name: 'london')
+londonPhoto = URI.open("https://www.londonpass.com/siteimg/newpages/238389676_TowerBridge1.jpg")
+london.photo.attach(io: londonPhoto, filename: "londonphoto.jpg", content_type: "image/jpg")
 
-# # Places
-# casaCruz = Place.create(name: 'Casa Cruz', address: '123A Clarendon Rd, Notting Hill, London W11 4JG, United Kingdom', city_id: london.id, category_id: food.id, average_rating: 5, food_list: ["brunch", "burgers"])
-# london1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/1a/db/0d/c5/img-20191220-wa0020-largejpg.jpg")
-# casaCruz.photo.attach(io: london1, filename: "img4.jpg", content_type: "image/jpg")
+# Places
+casaCruz = Place.create(name: 'Casa Cruz', address: '123A Clarendon Rd, Notting Hill, London W11 4JG, United Kingdom', city_id: london.id, category_id: food.id, food_list: ["brunch", "cocktails"])
+london1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/14/ec/77/62/casa-cruz.jpg")
+casaCruz.photo.attach(io: london1, filename: "london1.jpg", content_type: "image/jpg")
 
+londonEye = Place.create(name: 'London Eye', address: "London Eye, Westminster Bridge Road, London SE1 7PB, United Kingdom", city_id: london.id, category_id: sight.id, average_rating: 3, food_list: "views", sight_list: "touristy")
+london2 = URI.open("https://i.imgur.com/dJGRRyI.jpg")
+londonEye.photo.attach(io: london2, filename: "london2.jpg", content_type: "image/jpg")
 
-# londonEye = Place.create(name: 'London Eye', address: "London Eye, Westminster Bridge Road, London SE1 7PB, United Kingdom", city_id: london.id, category_id: sight.id, average_rating: 3, food_list: "views", sight_list: "touristy")
+museum = Place.create(name: 'Natural History Museum', address: "Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom", city_id: london.id, category_id: entertainment.id, average_rating: 4, food_list: "culture", sight_list: "museum")
+london3 = URI.open("https://i.imgur.com/jTRQTVU.jpg")
+museum.photo.attach(io: london3, filename: "london3.jpg", content_type: "image/jpg")
 
-# museum = Place.create(name: 'Natural History Museum', address: "Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom", city_id: london.id, category_id: entertainment.id, average_rating: 4, food_list: "culture", sight_list: "museum")
-
-# angleseaArms = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terrace, South Kensington, London SW7 3QG, United Kingdom", city_id: london.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
-
-# kabuki = Place.create(name: "Kabuki Wellington", address: "Calle de Velázquez, 6, 28001 Madrid, Spain", city_id: madrid.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
-
-
-
+angleseaArms = Place.create(name: "The Anglesea Arms", address: "15 Selwood Terrace, South Kensington, London SW7 3QG, United Kingdom", city_id: london.id, category_id: food.id, average_rating: 4, food_list: ["cocktails", "wine"])
+london4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/10/de/cf/1e/the-anglesea-arms.jpg")
+angleseaArms.photo.attach(io: london4, filename: "london4.jpg", content_type: "image/jpg")
 
 # City
 salvador = City.create(name: 'salvador')
@@ -89,16 +92,16 @@ pelourinho = Place.create(name: 'Pelourinho', address: 'Largo Terreiro de Jesus,
 salvador2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/3a/dd/23/photo1jpg.jpg")
 pelourinho.photo.attach(io: salvador2, filename: "salvador2.jpg", content_type: "image/jpg")
 
-misturaContorno = Place.create(name: 'Mistura Contorno', address: '334, Ladeira do Gabriel, Dois de Julho, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "veggie"])
-salvador3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/c4/75/67/photo0jpg.jpg")
+misturaContorno = Place.create(name: 'Mistura Contorno', address: '334 Ladeira do Gabriel, Dois de Julho, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "veggie"])
+salvador3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/12/11/ae/ae/photo0jpg.jpg")
 misturaContorno.photo.attach(io: salvador3, filename: "salvador3.jpg", content_type: "image/jpg")
 
-kimukeka = Place.create(name: 'Kimukeka', address: '345, Avenida Octavio Mangabeira Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "happy hour"])
+kimukeka = Place.create(name: 'Kimukeka', address: '345 Avenida Octavio Mangabeira Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "happy hour"])
 salvador4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/09/d2/e2/img-20171019-131309587.jpg")
 kimukeka.photo.attach(io: salvador4, filename: "salvador4.jpg", content_type: "image/jpg")
 
-origem = Place.create(name: 'Origem', address: '74, Alameda das Algarobas, Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "cocktails"])
-salvador5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-p/1a/5a/e2/3d/photo0jpg.jpg")
+origem = Place.create(name: 'Origem', address: '1 Alameda dos Flamboyants, Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "cocktails"])
+salvador5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-p/19/9f/53/b4/restaurante-origem.jpg")
 origem.photo.attach(io: salvador5, filename: "salvador5.jpg", content_type: "image/jpg")
 
 portoDaBarra = Place.create(name: 'Porto da Barra Beach', address: '3783 Avenida Sete de Setembro, Barra, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, entertainment_list: 'family-friendly', sight_list: "sunset")
@@ -110,7 +113,7 @@ salvador7 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/10/7a/09/b
 casaVidal.photo.attach(io: salvador7, filename: "salvador7.jpg", content_type: "image/jpg")
 
 # City
-saopaulo = City.create(name: 'sãopaulo')
+saopaulo = City.create(name: 'são paulo')
 saoPauloPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/0d/57/74/94/photo2jpg.jpg")
 saopaulo.photo.attach(io: saoPauloPhoto, filename: "saopaulophoto.jpg", content_type: "image/jpg")
 
@@ -128,7 +131,7 @@ saopaulo3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/1a/22/70/8
 ibirapuera.photo.attach(io: saopaulo3, filename: "saopaulo3.jpg", content_type: "image/jpg")
 
 terracoItalia = Place.create(name: 'Terraço Itália', address: 'Avenida Pedro Álvares Cabral, Vila Mariana, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: sight.id, entertainment_list: ["family-friendly", "rooftops"])
-saopaulo4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-o/03/b4/df/b3/piano-bar.jpg")
+saopaulo4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/17/ef/a5/71/file-com-risoto.jpg")
 terracoItalia.photo.attach(io: saopaulo4, filename: "saopaulo4.jpg", content_type: "image/jpg")
 
 
@@ -152,6 +155,7 @@ temploDebod.photo.attach(io: madrid1, filename: "madrid1.jpg", content_type: "im
 retiro = Place.create(name: 'Retiro Park', address: 'Plaza de la Independencia, 7, 28001 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["touristy", "parks"])
 madrid2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/0c/53/53/2c/img-20160729-205021-largejpg.jpg")
 retiro.photo.attach(io: madrid2, filename: "madrid2.jpg", content_type: "image/jpg")
+
 
 royalPalace = Place.create(name: 'Royal Palace', address: 'Calle de Bailén, s/n, 28071 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["historical", "touristy"])
 madrid3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/af/ca/4f/caption.jpg")
@@ -177,6 +181,7 @@ vega = Place.create(name: 'Vega', address: 'Calle de la Luna, 9, Madrid, Spain',
 madrid8 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmtFbkl08T6T_tL8iMOOqkCaiK1jJrGG3ldpoFk4l1FdsKs3_r")
 vega.photo.attach(io: madrid8, filename: "madrid8.jpg", content_type: "image/jpg")
 
+
 puntoMX = Place.create(name: 'Punto MX', address: 'Calle del Gral. Pardiñas, 40, 28001 Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['brunch', "cocktails"])
 madrid9 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7izmhsJ1w57-Q7DhWgNzW5_DJXgImPTvHsPlYVtEGggYI95HE")
 puntoMX.photo.attach(io: madrid9, filename: "madrid9.jpg", content_type: "image/jpg")
@@ -193,4 +198,71 @@ mago = Place.create(name: 'Mago Pop', address: 'Calle Gran Vía, 54, 28013 Madri
 madrid12 = URI.open("https://media-cdn.tripadvisor.com/media/photo-f/11/f7/bc/9f/el-mago-pop-nada-es-imposible.jpg")
 mago.photo.attach(io: madrid12, filename: "madrid12.jpg", content_type: "image/jpg")
 
+
+
+
+#Isa
+isa = User.create(username: "isa", email: 'ilopezg31@gmail.com', password: '123456')
+
+# City
+panama = City.create(name: 'panama')
+panamaPhoto = URI.open("https://images.unsplash.com/photo-1540610410855-b4c8877b761c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2406&q=80")
+panama.photo.attach(io: panamaPhoto, filename: "panamaohoto.jpg", content_type: "image/jpg")
+
+#Places
+antiBurger = Place.create(name: 'AntiBurger', address: 'Calle 71, Panamá, Panamá', city_id: panama.id, category_id: food.id, food_list: ["veggie", "burgers"])
+panama1 = URI.open("https://i.imgur.com/WWGFX2I.jpg")
+antiBurger.photo.attach(io: panama1,  filename: "panama1.jpg", content_type: "image/jpg")
+
+tantalo = Place.create(name: 'Tantalo', address: 'San Felipe, Panama City, Panama', city_id: panama.id, category_id: entertainment.id, food_list: "happy hour", entertainment_list: ["rooftop"])
+panama2 = URI.open("https://i.imgur.com/ol0wzby.jpg")
+tantalo.photo.attach(io: panama2,  filename: "panama2.jpg", content_type: "image/jpg")
+
+fonda = Place.create(name: 'Fonda Lo Que Hay', address: 'Calle 12, Panamá, Panamá', city_id: panama.id, category_id: food.id, food_list: "local")
+panama3 = place3pic = URI.open("https://i.imgur.com/tgoZznR.jpg")
+fonda.photo.attach(io: panama3,  filename: "panama3.jpg", content_type: "image/jpg")
+
+azahar = Place.create(name: 'Azahar', address: 'AVENIDA BALBOA, PANAMA, PANAMA', city_id: panama.id, category_id: food.id, food_list: "cocktails", sight_list: "sunset")
+panama4 = URI.open("https://i.imgur.com/CiDd0oI.jpg")
+azahar.photo.attach(io: panama4,  filename: "panama4.jpg", content_type: "image/jpg")
+
+brutto = Place.create(name: 'Brutto', address: 'Calle 74 Este, Panamá, Panama', city_id: panama.id, category_id: food.id, food_list: "happy hour")
+panama5 = URI.open("https://i.imgur.com/cVNB9WC.jpg")
+brutto.photo.attach(io: panama5,  filename: "panama5.jpg", content_type: "image/jpg")
+
+amano = Place.create(name: 'Amano', address: 'Calle 70 Este, Panamá, Panama', city_id: panama.id, category_id: food.id, food_list: ["wine", "cocktails"])
+panama6 = URI.open("https://i.imgur.com/pRQAN4R.jpg")
+amano.photo.attach(io: panama6,  filename: "panama6.jpg", content_type: "image/jpg")
+
+santana = Place.create(name: 'Santana', address: 'Casco Viejo, Panama City, Panama', city_id: panama.id, category_id: entertainment.id, entertainment_list: ["music", "dancing"])
+panama7 = URI.open("https://i.imgur.com/bj1r8RN.jpg")
+santana.photo.attach(io: panama7,  filename: "panama7.jpg", content_type: "image/jpg")
+
+canal = Place.create(name: 'Panama Canal', address: 'Miraflores Locks, Panama City, Panama', city_id: panama.id, category_id: sight.id, sight_list: ["touristy", "museum"])
+panama8 = URI.open("https://i.imgur.com/lW5LYLI.jpg")
+canal.photo.attach(io: panama8,  filename: "panama8.jpg", content_type: "image/jpg")
+
+panamaViejo = Place.create(name: 'Panama Viejo', address: 'Vía Cincuentenario, Panamá, Panama', city_id: panama.id, category_id: sight.id, sight_list: ["touristy", "historical"])
+panama9 = URI.open("https://i.imgur.com/SbLIGN1.jpg")
+panamaViejo.photo.attach(io: panama9,  filename: "panama9.jpg", content_type: "image/jpg")
+
+biomuseo = Place.create(name: 'Biomuseo', address: 'Amador Causeway 136, Panama City, Panama', city_id: panama.id, category_id: sight.id, sight_list: "museum")
+panama10 = URI.open("https://i.imgur.com/7Ry4c1q.jpg")
+biomuseo.photo.attach(io: panama10,  filename: "panama10.jpg", content_type: "image/jpg")
+
+cascoViejo = Place.create(name: 'Casco Viejo', address: 'San Felipe, Panama City, Panama', city_id: panama.id, category_id: sight.id, sight_list: ["touristy", "historical"])
+panama11 = URI.open("https://i.imgur.com/3YDENbN.jpg")
+cascoViejo.photo.attach(io: panama11,  filename: "panama11.jpg", content_type: "image/jpg")
+
+casaBruja = Place.create(name: 'Casa Bruja', address: 'Costa del Este, Panama City, Panama', city_id: panama.id, category_id: food.id, food_list: "happy hour", entertainment_list: "music")
+panama12 = URI.open("https://i.imgur.com/fRi7r2A.jpg")
+casaBruja.photo.attach(io: panama12,  filename: "panama12.jpg", content_type: "image/jpg")
+
+karma = Place.create(name: 'Karma', address: 'Calle 56 Este, Panamá, Panama', city_id: panama.id, category_id: food.id, food_list: "veggie")
+panama13 = URI.open("https://i.imgur.com/RFMvq6I.jpg")
+karma.photo.attach(io: panama13,  filename: "panama13.jpg", content_type: "image/jpg")
+
+salvaje = Place.create(name: 'Salvaje', address: 'Avenida Eloy Alfaro, Panama City, Panama', city_id: panama.id, category_id: food.id, food_list: "happy hour", entertainment_list: "music")
+panama14 = URI.open("https://i.imgur.com/c759hCT.jpg")
+salvaje.photo.attach(io: panama14,  filename: "panama14.jpg", content_type: "image/jpg")
 
