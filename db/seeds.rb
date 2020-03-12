@@ -143,7 +143,7 @@ madridPhoto = URI.open("https://images.unsplash.com/photo-1543783207-ec64e4d9532
 madrid.photo.attach(io: madridPhoto, filename: "madridPhoto.jpg", content_type: "image/jpg")
 
 # Places
-temploDebod = Place.create(name: 'Templo de Debod', address: 'Calle de Ferraz, 1, 28008 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["sunset", "historical"])
+temploDebod = Place.create(name: 'Debod Temple', address: 'Calle de Ferraz, 1, 28008 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["sunset", "historical"])
 madrid1 = URI.open("https://media.tacdn.com/media/attractions-splice-spp-360x240/06/73/d2/19.jpg")
 temploDebod.photo.attach(io: madrid1, filename: "madrid1.jpg", content_type: "image/jpg")
 
@@ -179,7 +179,7 @@ puntoMX = Place.create(name: 'Punto MX', address: 'Calle del General Pardiñas, 
 madrid9 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/76/b9/e5/tuetano-a-la-brasa.jpg")
 puntoMX.photo.attach(io: madrid9, filename: "madrid9.jpg", content_type: "image/jpg")
 
-prado = Place.create(name: 'Prado Museum', address: 'Calle de Ruiz de Alarcón, 23, 28014 Madrid, pain', city_id: madrid.id, category_id: sight.id, sight_list: ["museum", "touristy"])
+prado = Place.create(name: 'Prado Museum', address: 'Paseo del Prado, 8, 28014 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["museum", "touristy"])
 madrid10 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/18/0e/96/e6/photo0jpg.jpg")
 prado.photo.attach(io: madrid10, filename: "madrid10.jpg", content_type: "image/jpg")
 
@@ -187,7 +187,7 @@ inclan = Place.create(name: 'Inclan Brutal Bar', address: 'Calle de Arlabán, 7,
 madrid11 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/13/91/8d/45/barra.jpg")
 inclan.photo.attach(io: madrid11, filename: "madrid11.jpg", content_type: "image/jpg")
 
-mago = Place.create(name: 'Mago Pop', address: 'Calle Gran Vía, 54, 28013 Madrid, Spain', city_id: madrid.id, category_id: entertainment.id, entertainment_list: ['theatre', "music"])
+mago = Place.create(name: 'Mago Pop', address: 'Calle de San Bernardo, 2, 28013 Madrid', city_id: madrid.id, category_id: entertainment.id, entertainment_list: ['theatre', "music"])
 madrid12 = URI.open("https://media-cdn.tripadvisor.com/media/photo-f/11/f7/bc/9f/el-mago-pop-nada-es-imposible.jpg")
 mago.photo.attach(io: madrid12, filename: "madrid12.jpg", content_type: "image/jpg")
 
