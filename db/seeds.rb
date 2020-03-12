@@ -146,7 +146,7 @@ madrid.photo.attach(io: madridPhoto, filename: "madridPhoto.jpg", content_type: 
 
 # Places
 temploDebod = Place.create(name: 'Templo de Debod', address: 'Calle de Ferraz, 1, 28008 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["sunset", "historical"])
-madrid1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/af/ca/4f/caption.jpg")
+madrid1 = URI.open("https://media.tacdn.com/media/attractions-splice-spp-360x240/06/73/d2/19.jpg")
 temploDebod.photo.attach(io: madrid1, filename: "madrid1.jpg", content_type: "image/jpg")
 
 retiro = Place.create(name: 'Retiro Park', address: 'Plaza de la Independencia, 7, 28001 Madrid, Spain', city_id: madrid.id, category_id: sight.id, sight_list: ["touristy", "parks"])
@@ -158,7 +158,7 @@ madrid3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/af/ca/4f/
 royalPalace.photo.attach(io: madrid3, filename: "madrid3.jpg", content_type: "image/jpg")
 
 theHat = Place.create(name: 'The Hat', address: 'Calle Imperial, 9, 28012 Madrid, Spain', city_id: madrid.id, category_id: entertainment.id, entertainment_list: ["rooftops", "dancing"])
-madrid4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/09/d2/e2/img-20171019-131309587.jpg")
+madrid4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/09/06/df/0f/the-hat-rooftop-madrid.jpg")
 theHat.photo.attach(io: madrid4, filename: "madrid4.jpg", content_type: "image/jpg")
 
 chueca = Place.create(name: 'Chueca District', address: 'Chueca, Madrid, Spain', city_id: madrid.id, category_id: entertainment.id, entertainment_list: ["music", "dancing"])
@@ -174,11 +174,11 @@ madrid7 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/0a/dc/14/59/
 mercadoMiguel.photo.attach(io: madrid7, filename: "madrid7.jpg", content_type: "image/jpg")
 
 vega = Place.create(name: 'Vega', address: 'Calle de la Luna, 9, Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['veggie', "wine"])
-madrid8 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmtFbkl08T6T_tL8iMOOqkCaiK1jJrGG3ldpoFk4l1FdsKs3_r")
+madrid8 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/0a/ba/a5/c7/local.jpg")
 vega.photo.attach(io: madrid8, filename: "madrid8.jpg", content_type: "image/jpg")
 
 puntoMX = Place.create(name: 'Punto MX', address: 'Calle del Gral. Pardiñas, 40, 28001 Madrid, Spain', city_id: madrid.id, category_id: food.id, food_list: ['brunch', "cocktails"])
-madrid9 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7izmhsJ1w57-Q7DhWgNzW5_DJXgImPTvHsPlYVtEGggYI95HE")
+madrid9 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/76/b9/e5/tuetano-a-la-brasa.jpg")
 puntoMX.photo.attach(io: madrid9, filename: "madrid9.jpg", content_type: "image/jpg")
 
 prado = Place.create(name: 'Prado Museum', address: 'Calle de Ruiz de Alarcón, 23, 28014 Madrid, pain', city_id: madrid.id, category_id: sight.id, sight_list: ["museum", "touristy"])
