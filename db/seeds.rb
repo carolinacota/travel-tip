@@ -92,15 +92,15 @@ pelourinho = Place.create(name: 'Pelourinho', address: 'Largo Terreiro de Jesus,
 salvador2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/3a/dd/23/photo1jpg.jpg")
 pelourinho.photo.attach(io: salvador2, filename: "salvador2.jpg", content_type: "image/jpg")
 
-misturaContorno = Place.create(name: 'Mistura Contorno', address: '334 Ladeira do Gabriel, Dois de Julho, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "veggie"])
+misturaContorno = Place.create(name: 'Mistura Contorno', address: '334 Ladeira do Gabriel, Dois de Julho, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: food.id, food_list: ["local", "veggie"])
 salvador3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/12/11/ae/ae/photo0jpg.jpg")
 misturaContorno.photo.attach(io: salvador3, filename: "salvador3.jpg", content_type: "image/jpg")
 
-kimukeka = Place.create(name: 'Kimukeka', address: '345 Avenida Octavio Mangabeira Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "happy hour"])
+kimukeka = Place.create(name: 'Kimukeka', address: '345 Avenida Octavio Mangabeira Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: foodid, food_list: ["local", "happy hour"])
 salvador4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/09/d2/e2/img-20171019-131309587.jpg")
 kimukeka.photo.attach(io: salvador4, filename: "salvador4.jpg", content_type: "image/jpg")
 
-origem = Place.create(name: 'Origem', address: '1 Alameda dos Flamboyants, Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: ["local", "cocktails"])
+origem = Place.create(name: 'Origem', address: '1 Alameda dos Flamboyants, Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: food.id, food_list: ["local", "cocktails"])
 salvador5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-p/19/9f/53/b4/restaurante-origem.jpg")
 origem.photo.attach(io: salvador5, filename: "salvador5.jpg", content_type: "image/jpg")
 
@@ -108,7 +108,7 @@ portoDaBarra = Place.create(name: 'Porto da Barra Beach', address: '3783 Avenida
 salvador6 = URI.open("https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/e7/8b/db/praia-do-porto-da-barra.jpg")
 portoDaBarra.photo.attach(io: salvador6, filename: "salvador6.jpg", content_type: "image/jpg")
 
-casaVidal = Place.create(name: 'Casa Vidal', address: '417 Alameda das Cajazeiras, Caminho das Árvores, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, entertainment_list: 'family-friendly', food_list: "local")
+casaVidal = Place.create(name: 'Casa Vidal', address: '417 Alameda das Cajazeiras, Caminho das Árvores, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: food.id, entertainment_list: 'family-friendly', food_list: "local")
 salvador7 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/10/7a/09/ba/carpaccio-de-polvo-foto.jpg")
 casaVidal.photo.attach(io: salvador7, filename: "salvador7.jpg", content_type: "image/jpg")
 
@@ -118,7 +118,7 @@ saoPauloPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/0d/57/
 saopaulo.photo.attach(io: saoPauloPhoto, filename: "saopaulophoto.jpg", content_type: "image/jpg")
 
 # Places
-purana = Place.create(name: 'Purana', address: '840 Rua Cônego Eugênio Leite, Pinheiros, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: sight.id, food_list: ["local", "veggie"])
+purana = Place.create(name: 'Purana', address: '840 Rua Cônego Eugênio Leite, Pinheiros, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: food.id, food_list: ["local", "veggie"])
 saopaulo1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-p/16/57/d1/d0/photo0jpg.jpg")
 purana.photo.attach(io: saopaulo1, filename: "saopaulo1.jpg", content_type: "image/jpg")
 
@@ -130,7 +130,7 @@ ibirapuera = Place.create(name: 'Ibirapuera Park', address: 'Avenida Pedro Álva
 saopaulo3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/1a/22/70/87/ovo-de-pascoa-ibirapuera.jpg")
 ibirapuera.photo.attach(io: saopaulo3, filename: "saopaulo3.jpg", content_type: "image/jpg")
 
-terracoItalia = Place.create(name: 'Terraço Itália', address: 'Avenida Pedro Álvares Cabral, Vila Mariana, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: sight.id, entertainment_list: ["family-friendly", "rooftops"])
+terracoItalia = Place.create(name: 'Terraço Itália', address: 'Avenida Pedro Álvares Cabral, Vila Mariana, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: entertainment.id, entertainment_list: ["family-friendly", "rooftops"])
 saopaulo4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/17/ef/a5/71/file-com-risoto.jpg")
 terracoItalia.photo.attach(io: saopaulo4, filename: "saopaulo4.jpg", content_type: "image/jpg")
 
@@ -163,7 +163,7 @@ chueca = Place.create(name: 'Chueca District', address: 'Chueca, Madrid, Spain',
 madrid5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/42/0a/d5/i-ll-pick-my-guitar-and.jpg")
 chueca.photo.attach(io: madrid5, filename: "madrid5.jpg", content_type: "image/jpg")
 
-rastro = Place.create(name: 'El Rastro', address: 'Calle de la Ribera de Curtidores, 28005 Madrid, Spain', city_id: madrid.id, category_id: sight.id, entertainment_list: 'family-friendly', sight_list: "touristy")
+rastro = Place.create(name: 'El Rastro', address: 'Calle de Carlos Arniches, 14, 28005 Madrid, Spain', city_id: madrid.id, category_id: sight.id, entertainment_list: 'family-friendly', sight_list: "touristy")
 madrid6 = URI.open("https://db82kmzzne7f2.cloudfront.net/ghost-bloges/2018/03/paseo.jpg")
 rastro.photo.attach(io: madrid6, filename: "madrid6.jpg", content_type: "image/jpg")
 
