@@ -14,15 +14,17 @@
       <% end %>
     <% end %>
   </div>
-  <div class="place-info">
-    <h1><%= @place.name %></h1>
-  </div>
-  <div class="d-flex justify-content-center add-tip">
-    <i class="fas fa-award" style="font-size: 20px;"></i>
-    <p><%= link_to "Add a tip!", new_city_place_tip_path(@place.city, @place) %></p>
+  <div class="place-name">
+    <div class="place-info">
+      <h1><%= @place.name %></h1>
+    </div>
+    <div class="d-flex justify-content-center add-tip">
+      <i class="fas fa-award"></i>
+      <p><%= link_to "Add a tip!", new_city_place_tip_path(@place.city, @place) %></p>
+    </div>
   </div>
 
-  <h3 class="pink">Tips for <%= @place.name %></h3>
+  <!-- <h3 class="tips-place">Tips for <%= @place.name %></h3> -->
     <% @place.tips.group_by(&:user_id).each do |user_id, tips| %>
     <!-- Tip carousel -->
       <div id="tip-carousel" class="carousel slide" data-ride="false"style="height: 100%">
@@ -46,53 +48,59 @@
                 </div>
                 <!-- end of tip pictures carousel -->
                 <!-- tip content start -->
-                <div class="d-flex flex-column" style="width: 60%">
-                  <div class="content ml-3 d-flex align-items-start justify-content-center flex-column" style="width: 100%">
+                <div class="d-flex" style="width: 60%">
+                  <div class="content ml-3 d-flex align-items-start justify-content-between flex-column" style="width: 100%; margin-top: 10px;">
                     <div class="tip-content">
                       <h5>"<%= tip.content %>"</h5>
                     </div>
-                    <% if tip.user == current_user %>
-                      <p>- <%= link_to "Me", profile_path(tip.user.username) %></p>
-                    <% else %>
-                      <p>- <%= link_to tip.user.username.capitalize, profile_path(tip.user.username) %></p>
-                    <% end %>
-
-                  </div>
                   <!-- tip content end -->
                   <!-- vote container -->
-                  <% if tip.user != current_user %>
-                    <div class="vote ml-3 d-flex align-items-start justify-content-center">
-                      <div class="upvote">
-                        <span id="upvotes_<%= dom_id(tip) %>">
-                        </span>
-                        <%= link_to tip_upvote_path(tip), method: :post, remote: true do %>
-                          <i class="fas fa-sort-up"></i>
+                    <div class="upvotes-container d-flex justify-content-between" style="width: 100%">
+                      <div class="user-tip">
+                        <% if tip.user == current_user %>
+                          <p>- <%= link_to "Me", profile_path(tip.user.username) %></p>
+                        <% else %>
+                          <p>- <%= link_to tip.user.username.capitalize, profile_path(tip.user.username) %></p>
                         <% end %>
                       </div>
-                      <div class="tip-score">
-                        <span id="difference_<%= dom_id(tip) %>">
-                          <%= tip.upvote - tip.downvote %>
-                        </span>
-                      </div>
-                      <div class="downvote">
-                        <%= link_to tip_downvote_path(tip), method: :post, remote: true do %>
-                          <i class="fas fa-sort-down"></i>
+                      <div class="">
+                        <% if tip.user != current_user %>
+                          <div class="vote d-flex" style="margin-right: 7px;">
+                            <div class="upvote" style="padding-top: 10px; padding-right: 2px; opacity: 0.6;">
+                              <span id="upvotes_<%= dom_id(tip) %>">
+                              </span>
+                              <%= link_to tip_upvote_path(tip), method: :post, remote: true do %>
+                                <i class="fas fa-sort-up"></i>
+                              <% end %>
+                            </div>
+                            <div class="tip-score">
+                              <span id="difference_<%= dom_id(tip) %>">
+                                <%= tip.upvote - tip.downvote %>
+                              </span>
+                            </div>
+                            <div class="downvote" style="padding-left: 2px; opacity: 0.6;">
+                              <%= link_to tip_downvote_path(tip), method: :post, remote: true do %>
+                                <i class="fas fa-sort-down"></i>
+                              <% end %>
+                              <span id="downvotes_<%= dom_id(tip) %>">
+                              </span>
+                            </div>
+                          </div>
+                        <% else %>
+                      <!-- end vote container -->
                         <% end %>
-                        <span id="downvotes_<%= dom_id(tip) %>">
-                        </span>
                       </div>
                     </div>
+                </div>
+
                   </div>
-                <% else %>
-                <!-- end vote container -->
-                <% end %>
               </div>
             </div>
           <% end %>
         </div>
         <a class="carousel-control-next" href="#tip-carousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span> -->
         </a>
       </div>
       <!-- end of tip carousel -->
@@ -116,7 +124,7 @@
           style="border: 1px solid black"
       >
       </div>
-      <div class="btn btn-current-location">
+      <div class="btn location-box">
         <div class="current-location">
           <i class="fas fa-map-marker-alt" style="margin-right: 4px"></i>
           <%= link_to "Find places in my current location.", "#", id:'current-location'%>

@@ -1,5 +1,7 @@
-<%= simple_form_for [city, place, tip] do |f| %>
-  <%= f.input :content, require: true %>
-  <%= f.input :photos, :label => "Add photos to your tip", as: :file, input_html: { multiple: true } %>
-  <%= f.submit "Add a tip", class: "btn btn-pink" %>
-<% end %>
+<div class="m-3">
+  <%= simple_form_for [city, place, tip] do |f| %>
+    <%= f.input :content, require: true %>
+    <%= f.input :photos, :label => "Add photos to your tip", as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Add a tip", class: "btn btn-pink" %>
+  <% end %>
+</div>
