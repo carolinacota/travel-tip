@@ -76,6 +76,23 @@ pelourinho = Place.create(name: 'Pelourinho', address: 'Largo Terreiro de Jesus,
 salvador2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/16/3a/dd/23/photo1jpg.jpg")
 pelourinho.photo.attach(io: salvador2, filename: "salvador2.jpg", content_type: "image/jpg")
 
+misturaContorno = Place.create(name: 'Mistura Contorno', address: '334, Ladeira do Gabriel, Dois de Julho, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: "local", sight_list: ["touristy"])
+salvador3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/c4/75/67/photo0jpg.jpg")
+misturaContorno.photo.attach(io: salvador3, filename: "salvador3.jpg", content_type: "image/jpg")
+
+kimukeka = Place.create(name: 'Kimukeka', address: '345, Avenida Octavio Mangabeira Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: "local", sight_list: "touristy")
+salvador4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/09/d2/e2/img-20171019-131309587.jpg")
+kimukeka.photo.attach(io: salvador4, filename: "salvador4.jpg", content_type: "image/jpg")
+
+origem = Place.create(name: 'Origem', address: '74, Alameda das Algarobas, Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, food_list: "local", sight_list: "touristy")
+salvador5 = URI.open("https://media-cdn.tripadvisor.com/media/photo-p/1a/5a/e2/3d/photo0jpg.jpg")
+origem.photo.attach(io: salvador5, filename: "salvador5.jpg", content_type: "image/jpg")
+
+portoDaBarra = Place.create(name: 'Porto da Barra Beach', address: '3783 Avenida Sete de Setembro, Barra, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: sight.id, entertainment_list: 'family-friendly', sight_list: "touristy", "sunset")
+salvador6 = URI.open("https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/e7/8b/db/praia-do-porto-da-barra.jpg")
+portoDaBarra.photo.attach(io: salvador6, filename: "salvador6.jpg", content_type: "image/jpg")
+
+
 
 
 # FOODS = ['brunch', 'burgers', 'veggie' 'cocktails', 'wine', 'local', 'happy hour'].freeze
