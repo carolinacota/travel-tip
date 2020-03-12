@@ -1,6 +1,8 @@
 class Place < ApplicationRecord
   after_validation :set_slug, on: %i[create update]
 
+  has_one_attached :photo
+
   FOODS = ['brunch', 'burgers', 'veggie' 'cocktails', 'wine', 'local', 'happy hour'].freeze
   SIGHTS = ['museum', 'historical', 'touristy', 'parks', 'sunset'].freeze
   ENTERTAINMENTS = ['family-friendly', 'music', 'dancing', 'theatre', 'sports', 'rooftops'].freeze
