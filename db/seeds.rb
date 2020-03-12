@@ -52,18 +52,20 @@ place2 = Place.create(name: 'Reina Sofia', address: "Paseo de Recoletos, Madrid,
 
 carol = User.create(username: "carol", email: 'carolinareycota@gmail.com', password: '123456')
 
-# # City
-# london = City.create(name: 'london')
-# londonPhoto = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/1a/db/0d/c5/img-20191220-wa0020-largejpg.jpg")
-# london.photo.attach(io: londonPhoto, filename: "londonphoto.jpg", content_type: "image/jpg")
+# City
+london = City.create(name: 'london')
+londonPhoto = URI.open("https://unsplash.com/photos/Q6UehpkBSnQ")
+london.photo.attach(io: londonPhoto, filename: "londonphoto.jpg", content_type: "image/jpg")
 
-# # Places
-# casaCruz = Place.create(name: 'Casa Cruz', address: '123A Clarendon Rd, Notting Hill, London W11 4JG, United Kingdom', city_id: london.id, category_id: food.id, average_rating: 5, food_list: ["brunch", "burgers"])
-# london1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/1a/db/0d/c5/img-20191220-wa0020-largejpg.jpg")
-# casaCruz.photo.attach(io: london1, filename: "img4.jpg", content_type: "image/jpg")
+# Places
+casaCruz = Place.create(name: 'Casa Cruz', address: '123A Clarendon Rd, Notting Hill, London W11 4JG, United Kingdom', city_id: london.id, category_id: food.id, food_list: ["brunch", "cocktails"])
+london1 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/14/ec/77/62/casa-cruz.jpg")
+casaCruz.photo.attach(io: london1, filename: "london1.jpg", content_type: "image/jpg")
 
 
-# londonEye = Place.create(name: 'London Eye', address: "London Eye, Westminster Bridge Road, London SE1 7PB, United Kingdom", city_id: london.id, category_id: sight.id, average_rating: 3, food_list: "views", sight_list: "touristy")
+londonEye = Place.create(name: 'London Eye', address: "London Eye, Westminster Bridge Road, London SE1 7PB, United Kingdom", city_id: london.id, category_id: sight.id, average_rating: 3, food_list: "views", sight_list: "touristy")
+london2 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/14/ec/77/62/casa-cruz.jpg")
+londonEye.photo.attach(io: london2, filename: "london2.jpg", content_type: "image/jpg")
 
 # museum = Place.create(name: 'Natural History Museum', address: "Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom", city_id: london.id, category_id: entertainment.id, average_rating: 4, food_list: "culture", sight_list: "museum")
 
@@ -127,7 +129,7 @@ saopaulo3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/1a/22/70/8
 ibirapuera.photo.attach(io: saopaulo3, filename: "saopaulo3.jpg", content_type: "image/jpg")
 
 terracoItalia = Place.create(name: 'Terraço Itália', address: 'Avenida Pedro Álvares Cabral, Vila Mariana, São Paulo, São Paulo, Brasil', city_id: saopaulo.id, category_id: sight.id, entertainment_list: ["family-friendly", "rooftops"])
-saopaulo4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-o/03/b4/df/b3/piano-bar.jpg")
+saopaulo4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/17/14/29/1d/img-20190405-144958-229.jpg")
 terracoItalia.photo.attach(io: saopaulo4, filename: "saopaulo4.jpg", content_type: "image/jpg")
 
 
