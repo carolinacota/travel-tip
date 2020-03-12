@@ -96,7 +96,7 @@ misturaContorno = Place.create(name: 'Mistura Contorno', address: '334 Ladeira d
 salvador3 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/12/11/ae/ae/photo0jpg.jpg")
 misturaContorno.photo.attach(io: salvador3, filename: "salvador3.jpg", content_type: "image/jpg")
 
-kimukeka = Place.create(name: 'Kimukeka', address: '345 Avenida Octavio Mangabeira Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: foodid, food_list: ["local", "happy hour"])
+kimukeka = Place.create(name: 'Kimukeka', address: '345 Avenida Octavio Mangabeira Pituba, Salvador, Bahia, Brasil', city_id: salvador.id, category_id: food.id, food_list: ["local", "happy hour"])
 salvador4 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/11/09/d2/e2/img-20171019-131309587.jpg")
 kimukeka.photo.attach(io: salvador4, filename: "salvador4.jpg", content_type: "image/jpg")
 
